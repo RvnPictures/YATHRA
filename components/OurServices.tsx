@@ -81,7 +81,7 @@ const OurServices = () => {
             Nos <span className="text-yathra-green">Services</span>
           </h2>
           <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed">
-            Notre gamme complète de services comprend le développement web sur mesure, la création d'applications mobiles innovantes, 
+            Notre gamme complète de services comprend le développement web sur mesure, la création d&apos;applications mobiles innovantes, 
             le design UX/UI de pointe et le marketing digital stratégique. Nous combinons créativité et expertise technique 
             pour livrer des solutions qui génèrent des résultats.
           </p>

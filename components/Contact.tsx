@@ -34,7 +34,7 @@ export default function Contact() {
             Contactez-nous
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            N'hésitez pas à nous contacter pour discuter de votre projet
+            N&apos;hésitez pas à nous contacter pour discuter de votre projet
           </p>
         </motion.div>
 

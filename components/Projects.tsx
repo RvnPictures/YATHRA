@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -116,7 +115,6 @@ const Projects = () => {
   const displayedProjects = allFilteredProjects.slice(0, 6);
   
   // Afficher le bouton si plus de 6 projets
-  const showViewAllButton = allFilteredProjects.length > 6;
 
   return (
     <section id="projects" className="py-20 px-4 bg-black">
@@ -132,7 +130,7 @@ const Projects = () => {
             Nos <span className="text-primary">Projets</span>
           </h2>
           <p className="text-gray-500 max-w-3xl mx-auto text-lg">
-            Découvrez l'excellence de nos réalisations. Notre portfolio présente les collaborations réussies que nous avons eues avec
+            Découvrez l&apos;excellence de nos réalisations. Notre portfolio présente les collaborations réussies que nous avons eues avec
             divers clients dans plusieurs industries. Laissez notre travail parler de lui-même.
           </p>
         </motion.div>
@@ -183,7 +181,7 @@ const Projects = () => {
                 }
               }}
             >
-              {displayedProjects.map((project, index) => (
+              {displayedProjects.map((project) => (
                 <motion.div
                   key={`${activeFilter}-${project.id}`}
                   layout

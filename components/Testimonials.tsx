@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import Image from "next/image";
 
 const Testimonials = () => {
   const [isPaused, setIsPaused] = useState(false);
@@ -76,7 +75,7 @@ const Testimonials = () => {
 
   // Animation
   useEffect(() => {
-    let controls: any;
+    let controls: NodeJS.Timeout;
     
     const startAnimation = () => {
       if (!isPaused) {
@@ -141,9 +140,9 @@ const Testimonials = () => {
 
                 {/* Testimonial Content */}
                 <p className="text-gray-300 text-sm leading-relaxed mb-8 min-h-[120px]">
-                  <span className="text-primary/60 text-lg font-serif">"</span>
+                  <span className="text-primary/60 text-lg font-serif">&quot;</span>
                   {testimonial.content}
-                  <span className="text-primary/60 text-lg font-serif">"</span>
+                  <span className="text-primary/60 text-lg font-serif">&quot;</span>
                 </p>
 
                 {/* Author Info */}

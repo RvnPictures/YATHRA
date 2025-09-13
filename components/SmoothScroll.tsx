@@ -5,11 +5,9 @@ import { useEffect, useRef } from "react";
 const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
   const velocityRef = useRef(0);
   const isScrollingRef = useRef(false);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number>(0);
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
-    let lastTime = Date.now();
     
     // Inertia settings
     const friction = 0.92; // Higher = more slippery (0.95 = very icy, 0.85 = less icy)
@@ -44,8 +42,6 @@ const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
       
-      const currentTime = Date.now();
-      const currentScrollY = window.scrollY;
       
       // Calculate velocity based on scroll delta
       const instantVelocity = e.deltaY * velocityMultiplier;
@@ -58,7 +54,7 @@ const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
       }
       
       // Apply immediate scroll
-      const immediateScroll = currentScrollY + e.deltaY * 0.8;
+      const immediateScroll = window.scrollY + e.deltaY * 0.8;
       window.scrollTo({
         top: immediateScroll,
         behavior: 'auto'
@@ -73,9 +69,6 @@ const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
         isScrollingRef.current = true;
         animationFrameRef.current = requestAnimationFrame(applyInertia);
       }
-      
-      lastScrollY = currentScrollY;
-      lastTime = currentTime;
     };
 
     // Add smooth scrolling CSS

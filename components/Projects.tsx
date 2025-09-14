@@ -22,98 +22,48 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Innovative E-commerce Platform",
+      title: "Parad'Ice Bar",
       category: "Site Web",
       filter: "website",
-      date: "January 2022",
-      description: "Witness our groundbreaking e-commerce platform that seamlessly connects buyers and sellers worldwide. With an intuitive user interface and secure payment gateways, this project revolutionizes online shopping.",
-      image: "/projects/ecommerce-platform.jpg",
-      href: "/projects/ecommerce-platform"
+      date: "Septembre 2025",
+      description: "Parad'Ice Bar est une expérience web premium et immersive pour un bar à cocktails.",
+      image: "/img/projetparadicebar.jpeg",
+      href: "https://paradicegroup.fr"
     },
     {
       id: 2,
-      title: "Mobile App for Enhanced Fitness",
-      category: "Application Mobile",
-      filter: "mobile",
-      date: "March 2022",
-      description: "Our fitness app helps users stay fit and motivated with personalized workout plans and progress tracking. Its user-friendly design and comprehensive features make staying healthy an enjoyable experience.",
-      image: "/projects/fitness-app.jpg",
-      href: "/projects/fitness-app"
+      title: "PixEvent",
+      category: "SaaS",
+      filter: "saas",
+      date: "Septembre 2025",
+      description: "Description à venir.",
+      image: "/projects/pixevent.jpg",
+      href: "/projects/pixevent"
     },
     {
       id: 3,
-      title: "Modern Corporate Website",
+      title: "Parad'Ice Coffee",
       category: "Site Web",
       filter: "website",
-      date: "April 2022",
-      description: "Check out our sleek and modern corporate website that showcases the client's brand and services. Its responsive design ensures a consistent experience across devices.",
-      image: "/projects/corporate-website.jpg",
-      href: "/projects/corporate-website"
+      date: "Septembre 2025",
+      description: "Parad'Ice Coffee est une vitrine web moderne et gourmande pour des prestations premium de gaufres, crêpes et barbe à papa, pensée pour les mariages, événements d'entreprise.",
+      image: "/projects/coffee-shop.jpg",
+      href: "/projects/paradice-coffee"
     },
     {
       id: 4,
-      title: "CRM SaaS Platform",
-      category: "SaaS",
-      filter: "saas",
-      date: "May 2022",
-      description: "Comprehensive customer relationship management platform with automation, analytics, and seamless integrations for modern businesses.",
-      image: "/projects/crm-platform.jpg",
-      href: "/projects/crm-platform"
-    },
-    {
-      id: 5,
-      title: "Analytics Dashboard SaaS",
-      category: "SaaS",
-      filter: "saas",
-      date: "June 2022",
-      description: "A comprehensive analytics dashboard for SaaS businesses with real-time data visualization and reporting capabilities.",
-      image: "/projects/saas-dashboard.jpg",
-      href: "/projects/saas-dashboard"
-    },
-    {
-      id: 6,
-      title: "Food Delivery Mobile App",
-      category: "Application Mobile",
-      filter: "mobile",
-      date: "July 2022",
-      description: "Revolutionary food delivery app connecting local restaurants with customers, featuring real-time tracking and seamless ordering.",
-      image: "/projects/food-delivery.jpg",
-      href: "/projects/food-delivery"
-    },
-    {
-      id: 7,
-      title: "Portfolio Website",
+      title: "Parad'Ice Booth",
       category: "Site Web",
       filter: "website",
-      date: "August 2022",
-      description: "Stunning portfolio website for creative professionals showcasing their work with modern animations and responsive design.",
-      image: "/projects/portfolio-site.jpg",
-      href: "/projects/portfolio-site"
-    },
-    {
-      id: 8,
-      title: "Task Management SaaS",
-      category: "SaaS",
-      filter: "saas",
-      date: "September 2022",
-      description: "Collaborative task management platform designed for remote teams with real-time updates and comprehensive project tracking.",
-      image: "/projects/task-management.jpg",
-      href: "/projects/task-management"
-    },
-    {
-      id: 9,
-      title: "Banking Mobile App",
-      category: "Application Mobile",
-      filter: "mobile",
-      date: "October 2022",
-      description: "Secure banking application with biometric authentication, instant transfers, and comprehensive financial management tools.",
-      image: "/projects/banking-app.jpg",
-      href: "/projects/banking-app"
+      date: "Septembre 2025",
+      description: "Parad'Ice Booth est une vitrine web immersive et ultra-performante pour la location de photobooth et videobooth 360°.",
+      image: "/projects/booth.jpg",
+      href: "/projects/paradice-booth"
     }
   ];
 
   const filters = [
-    { id: "all", label: "Général" },
+    { id: "all", label: "Tout" },
     { id: "saas", label: "SaaS" },
     { id: "website", label: "Site Web" },
     { id: "mobile", label: "Application Mobile" }
@@ -150,21 +100,29 @@ const Projects = () => {
 
         {/* Filtres */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {filters.map((filter) => (
-            <motion.button
-              key={filter.id}
-              onClick={() => setActiveFilter(filter.id)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 border ${
-                activeFilter === filter.id
-                  ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20"
-                  : "bg-gray-950 text-gray-400 border-gray-800 hover:border-primary/30 hover:text-primary hover:bg-gray-900"
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {filter.label}
-            </motion.button>
-          ))}
+          {filters.map((filter) => {
+            // Désactiver temporairement Application Mobile
+            const isDisabled = filter.id === "mobile";
+            
+            return (
+              <motion.button
+                key={filter.id}
+                onClick={() => !isDisabled && setActiveFilter(filter.id)}
+                disabled={isDisabled}
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 border ${
+                  isDisabled
+                    ? "bg-gray-950/50 text-gray-600 border-gray-800/50 cursor-not-allowed opacity-50"
+                    : activeFilter === filter.id
+                    ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20"
+                    : "bg-gray-950 text-gray-400 border-gray-800 hover:border-primary/30 hover:text-primary hover:bg-gray-900"
+                }`}
+                whileHover={!isDisabled ? { scale: 1.05 } : {}}
+                whileTap={!isDisabled ? { scale: 0.95 } : {}}
+              >
+                {filter.label}
+              </motion.button>
+            );
+          })}
         </div>
 
         <div className="relative min-h-[600px]">
@@ -237,12 +195,18 @@ const Projects = () => {
                   className="group perspective-1000"
                   style={{ transformStyle: "preserve-3d" }}
                 >
-                  <motion.div 
-                    className="bg-gray-950 rounded-2xl overflow-hidden transition-all duration-300 shadow-xl hover:shadow-2xl border border-gray-900 hover:border-primary/30 group relative"
-                    whileHover={{ 
-                      boxShadow: "0 20px 40px rgba(53, 215, 156, 0.1)"
-                    }}
+                  <a 
+                    href={project.href}
+                    target={project.href.startsWith('http') ? '_blank' : '_self'}
+                    rel={project.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="block"
                   >
+                    <motion.div 
+                      className="bg-gray-950 rounded-2xl overflow-hidden transition-all duration-300 shadow-xl hover:shadow-2xl border border-gray-900 hover:border-primary/30 group relative cursor-pointer"
+                      whileHover={{ 
+                        boxShadow: "0 20px 40px rgba(53, 215, 156, 0.1)"
+                      }}
+                    >
                       {/* Accent vert en haut de la carte */}
                       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       
@@ -262,6 +226,10 @@ const Projects = () => {
                           onError={(e) => {
                             e.currentTarget.style.display = 'none';
                             e.currentTarget.parentElement!.style.background = 'linear-gradient(135deg, #0a1f1a 0%, #030712 100%)';
+                            const placeholder = e.currentTarget.parentElement!.querySelector('.placeholder-icon');
+                            if (placeholder) {
+                              (placeholder as HTMLElement).style.display = 'flex';
+                            }
                           }}
                         />
                         {/* Badge de catégorie avec accent vert */}
@@ -272,7 +240,7 @@ const Projects = () => {
                         </div>
                         {/* Placeholder si l'image n'existe pas */}
                         <motion.div 
-                          className="absolute inset-0 flex items-center justify-center"
+                          className="placeholder-icon absolute inset-0 items-center justify-center hidden"
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
                           transition={{ 
@@ -318,7 +286,8 @@ const Projects = () => {
                           {project.description}
                         </p>
                       </motion.div>
-                  </motion.div>
+                    </motion.div>
+                  </a>
                 </motion.div>
               ))}
             </motion.div>

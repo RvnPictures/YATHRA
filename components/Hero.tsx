@@ -41,7 +41,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="flex-1 flex items-start lg:items-center justify-center lg:justify-end order-1 lg:order-2 -mt-8 sm:-mt-4 lg:mt-0"
+          className="flex-1 flex items-start lg:items-center justify-center lg:justify-end order-1 lg:order-2 -mt-12 sm:-mt-6 lg:mt-0"
         >
           <div className="relative flex flex-col items-center">
             <motion.div

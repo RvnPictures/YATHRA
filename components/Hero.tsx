@@ -8,7 +8,7 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-between px-6 lg:px-12 bg-black relative overflow-hidden pt-20">
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-8 lg:gap-12 py-4 lg:py-0">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between gap-2 sm:gap-6 lg:gap-12 py-2 lg:py-0">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -41,7 +41,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="flex-1 flex items-center justify-center lg:justify-end order-1 lg:order-2"
+          className="flex-1 flex items-start lg:items-center justify-center lg:justify-end order-1 lg:order-2 -mt-4 sm:mt-0"
         >
           <div className="relative flex flex-col items-center">
             <motion.div
@@ -78,7 +78,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="mt-4 sm:mt-6 lg:mt-8 inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-yathra-green/10 border border-yathra-green/20"
+              className="mt-2 sm:mt-4 lg:mt-8 inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-yathra-green/10 border border-yathra-green/20"
             >
               <span className="text-yathra-green text-xs sm:text-sm font-medium">
                 Développement Web & Mobile Premium

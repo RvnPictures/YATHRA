@@ -64,7 +64,7 @@ const Header = () => {
       className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-md border-b border-white/10"
     >
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 md:h-20">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -76,7 +76,7 @@ const Header = () => {
               alt="Yathra Logo"
               width={80}
               height={30}
-              className="object-contain"
+              className="object-contain w-16 h-auto md:w-20"
               priority
             />
           </motion.div>

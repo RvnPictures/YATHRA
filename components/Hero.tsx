@@ -8,12 +8,12 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-between px-6 lg:px-12 bg-black relative overflow-hidden pt-20">
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-8 lg:gap-12 py-4 lg:py-0">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex-1 max-w-xl"
+          className="flex-1 max-w-xl order-2 lg:order-1"
         >
           <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-6">
             Notre voyage commence avec vos <span className="text-yathra-green">idées</span>.
@@ -41,7 +41,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="flex-1 flex items-center justify-center lg:justify-end"
+          className="flex-1 flex items-center justify-center lg:justify-end order-1 lg:order-2"
         >
           <div className="relative flex flex-col items-center">
             <motion.div
@@ -60,7 +60,7 @@ const Hero = () => {
                 alt="Yathra Logo"
                 width={500}
                 height={200}
-                className="object-contain drop-shadow-2xl w-64 sm:w-80 md:w-96 lg:w-[500px] h-auto"
+                className="object-contain drop-shadow-2xl w-48 sm:w-64 md:w-80 lg:w-[500px] h-auto"
                 priority
               />
               <div className="absolute inset-0 blur-[50px] opacity-30">
@@ -69,7 +69,7 @@ const Hero = () => {
                   alt="Yathra Logo Shadow"
                   width={500}
                   height={200}
-                  className="object-contain w-64 sm:w-80 md:w-96 lg:w-[500px] h-auto"
+                  className="object-contain w-48 sm:w-64 md:w-80 lg:w-[500px] h-auto"
                 />
               </div>
             </motion.div>

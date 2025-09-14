@@ -123,8 +123,8 @@ const Projects = () => {
     ? projects 
     : projects.filter(project => project.filter === activeFilter);
   
-  // Limiter à 2 projets sur mobile, 6 sur desktop
-  const projectLimit = isMobile ? 2 : 6;
+  // Limiter à 3 projets sur mobile, 6 sur desktop
+  const projectLimit = isMobile ? 3 : 6;
   const displayedProjects = allFilteredProjects.slice(0, projectLimit);
   
   // Afficher le bouton si plus de 6 projets

@@ -8,7 +8,7 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-between px-6 lg:px-12 bg-black relative overflow-hidden pt-20">
-      <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between gap-8 lg:gap-12 py-0">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between gap-12 sm:gap-10 lg:gap-12 py-0">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}

@@ -113,18 +113,18 @@ const Projects = () => {
   ];
 
   const filters = [
-    { id: "all", label: "Tous", count: projects.length },
-    { id: "saas", label: "SaaS", count: projects.filter(p => p.filter === "saas").length },
-    { id: "website", label: "Site Web", count: projects.filter(p => p.filter === "website").length },
-    { id: "mobile", label: "Application Mobile", count: projects.filter(p => p.filter === "mobile").length }
+    { id: "all", label: "Général" },
+    { id: "saas", label: "SaaS" },
+    { id: "website", label: "Site Web" },
+    { id: "mobile", label: "Application Mobile" }
   ];
 
   const allFilteredProjects = activeFilter === "all" 
     ? projects 
     : projects.filter(project => project.filter === activeFilter);
   
-  // Limiter à 3 projets sur mobile, 6 sur desktop
-  const projectLimit = isMobile ? 3 : 6;
+  // Limiter à 2 projets sur mobile, 6 sur desktop
+  const projectLimit = isMobile ? 2 : 6;
   const displayedProjects = allFilteredProjects.slice(0, projectLimit);
   
   // Afficher le bouton si plus de 6 projets
@@ -163,7 +163,6 @@ const Projects = () => {
               whileTap={{ scale: 0.95 }}
             >
               {filter.label}
-              <span className="ml-2 text-sm opacity-60">({filter.count})</span>
             </motion.button>
           ))}
         </div>

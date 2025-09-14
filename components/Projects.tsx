@@ -1,11 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const projects = [
     {
@@ -111,8 +123,9 @@ const Projects = () => {
     ? projects 
     : projects.filter(project => project.filter === activeFilter);
   
-  // Limiter à 6 projets maximum
-  const displayedProjects = allFilteredProjects.slice(0, 6);
+  // Limiter à 3 projets sur mobile, 6 sur desktop
+  const projectLimit = isMobile ? 3 : 6;
+  const displayedProjects = allFilteredProjects.slice(0, projectLimit);
   
   // Afficher le bouton si plus de 6 projets
 

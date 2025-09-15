@@ -3,32 +3,13 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Plus, Minus } from 'lucide-react'
-
-const faqs = [
-  {
-    question: "Combien de temps faut-il pour développer un site web ?",
-    answer: "Le délai varie selon la complexité et les exigences du projet. Notre équipe s'efforce de livrer les projets dans les délais tout en maintenant les plus hauts standards de qualité. Un site vitrine simple peut prendre 2-4 semaines, tandis qu'une application web complexe peut nécessiter 2-6 mois."
-  },
-  {
-    question: "Pouvez-vous créer un design de site web responsive qui fonctionne sur tous les appareils ?",
-    answer: "Absolument ! Tous nos sites web sont conçus avec une approche mobile-first, garantissant une expérience utilisateur optimale sur tous les appareils - smartphones, tablettes et ordinateurs de bureau. Nous testons rigoureusement sur différentes tailles d'écran et navigateurs."
-  },
-  {
-    question: "Quelles stratégies de marketing digital utilisez-vous pour générer du trafic ?",
-    answer: "Nous employons une approche multi-canal incluant le SEO on-page et off-page, le marketing de contenu, les campagnes publicitaires ciblées (Google Ads, réseaux sociaux), l'email marketing et l'optimisation du taux de conversion pour maximiser votre visibilité en ligne."
-  },
-  {
-    question: "Pouvez-vous gérer des projets de développement d'applications mobiles à grande échelle ?",
-    answer: "Oui, notre équipe a l'expertise et les ressources pour gérer des projets d'applications mobiles de toute envergure. Nous utilisons des méthodologies agiles et des architectures scalables pour assurer que votre application puisse grandir avec votre entreprise."
-  },
-  {
-    question: "Pouvez-vous intégrer des APIs tierces dans notre application mobile ?",
-    answer: "Certainement ! Nous avons une vaste expérience dans l'intégration d'APIs tierces comme les systèmes de paiement, les réseaux sociaux, les services de géolocalisation, les CRM et bien d'autres pour enrichir les fonctionnalités de votre application."
-  }
-]
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export default function FAQ() {
+  const { t } = useLanguage()
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  
+  const faqs = t.faq.items
 
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
@@ -45,10 +26,10 @@ export default function FAQ() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Questions Fréquemment <span className="text-primary">Posées</span>
+            {t.faq.title} <span className="text-primary">{t.faq.titleHighlight}</span>
           </h2>
           <p className="text-gray-400 max-w-3xl mx-auto">
-            Des questions ? Nous avons les réponses. Consultez notre section FAQ pour obtenir des informations précieuses sur nos processus, tarifs et plus encore. La transparence est au cœur de nos interactions clients.
+            {t.faq.subtitle}
           </p>
         </motion.div>
 

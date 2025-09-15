@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const partners = [
   { id: 1, name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png" },
@@ -14,6 +15,7 @@ const partners = [
 ];
 
 export default function Partners() {
+  const { t } = useLanguage();
   // Triple the partners to ensure seamless infinite scroll
   const triplePartners = [...partners, ...partners, ...partners];
 
@@ -28,10 +30,10 @@ export default function Partners() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ils nous font confiance
+            {t?.partners?.title || "Ils nous font confiance"}
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Nous sommes fiers de collaborer avec des entreprises leaders dans leur domaine
+            {t?.partners?.subtitle || "Nous sommes fiers de collaborer avec des entreprises leaders dans leur domaine"}
           </p>
         </motion.div>
 

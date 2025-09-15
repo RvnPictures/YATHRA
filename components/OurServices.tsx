@@ -4,31 +4,34 @@ import { motion } from "framer-motion";
 import { 
   Monitor, 
   Smartphone, 
-  Palette, 
-  TrendingUp
+  Cloud, 
+  Users
 } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const OurServices = () => {
+  const { t } = useLanguage();
+  
   const services = [
     {
       icon: Monitor,
-      title: "Développement Web",
-      description: "Sites web sur mesure, performants et responsive. Nous créons des expériences digitales qui convertissent, avec les dernières technologies pour propulser votre présence en ligne."
+      title: t.services.web.title,
+      description: t.services.web.description
     },
     {
       icon: Smartphone,
-      title: "Développement Mobile",
-      description: "Applications natives et cross-platform pour iOS et Android. Solutions mobiles intuitives et performantes qui engagent vos utilisateurs où qu'ils soient."
+      title: t.services.mobile.title,
+      description: t.services.mobile.description
     },
     {
-      icon: Palette,
-      title: "Design Web",
-      description: "Interfaces élégantes et expériences utilisateur mémorables. Notre approche créative allie esthétique et fonctionnalité pour faire briller votre marque."
+      icon: Cloud,
+      title: t.services.saas.title,
+      description: t.services.saas.description
     },
     {
-      icon: TrendingUp,
-      title: "Marketing Digital",
-      description: "Stratégies SEO, publicités ciblées et présence sociale. Nous boostons votre visibilité en ligne avec des campagnes data-driven qui génèrent des résultats mesurables."
+      icon: Users,
+      title: t.services.consulting.title,
+      description: t.services.consulting.description
     }
   ];
 
@@ -78,12 +81,10 @@ const OurServices = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Nos <span className="text-yathra-green">Services</span>
+            {t.services.title} <span className="text-yathra-green">{t.services.titleHighlight}</span>
           </h2>
           <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed">
-            Notre gamme complète de services comprend le développement web sur mesure, la création d&apos;applications mobiles innovantes, 
-            le design UX/UI de pointe et le marketing digital stratégique. Nous combinons créativité et expertise technique 
-            pour livrer des solutions qui génèrent des résultats.
+            {t.services.subtitle}
           </p>
         </motion.div>
 

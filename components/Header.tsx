@@ -4,17 +4,19 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const { t } = useLanguage();
 
   const navItems = [
-    { name: "Accueil", href: "#home", id: "home" },
-    { name: "Services", href: "#services", id: "services" },
-    { name: "Projets", href: "#projects", id: "projects" },
-    { name: "FAQ", href: "#faq", id: "faq" },
-    { name: "Contact", href: "#contact", id: "contact" },
+    { name: t.nav.home, href: "#home", id: "home" },
+    { name: t.nav.services, href: "#services", id: "services" },
+    { name: t.nav.projects, href: "#projects", id: "projects" },
+    { name: t.nav.faq, href: "#faq", id: "faq" },
+    { name: t.nav.contact, href: "#contact", id: "contact" },
   ];
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {

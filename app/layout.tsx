@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import SmoothScroll from "@/components/SmoothScroll";
+import { LanguageProvider } from "@/lib/i18n/LanguageContext";
+import LanguageSelector from "@/components/LanguageSelector";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -22,9 +24,12 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={cn(inter.className, "antialiased")}>
-        <SmoothScroll>
-          {children}
-        </SmoothScroll>
+        <LanguageProvider>
+          <SmoothScroll>
+            {children}
+          </SmoothScroll>
+          <LanguageSelector />
+        </LanguageProvider>
       </body>
     </html>
   );

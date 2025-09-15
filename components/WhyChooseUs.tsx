@@ -6,28 +6,31 @@ import {
   Lightbulb, 
   Star
 } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const WhyChooseUs = () => {
+  const { t } = useLanguage();
+  
   const reasons = [
     {
       icon: Sparkles,
-      title: "Expertise qui Génère des Résultats",
-      description: "Notre équipe de professionnels expérimentés apporte des années d'expertise et de savoir-faire à votre projet."
+      title: t.whyUs.features.expertise.title,
+      description: t.whyUs.features.expertise.description
     },
     {
       icon: Lightbulb,
-      title: "Solutions Business Sur Mesure",
-      description: "Nous comprenons que chaque entreprise est unique. C'est pourquoi nos solutions sont personnalisées."
+      title: t.whyUs.features.personalized.title,
+      description: t.whyUs.features.personalized.description
     },
     {
       icon: Star,
-      title: "Design Web Avant-Gardiste",
-      description: "Laissez une impression durable sur votre audience avec nos services de design web de pointe."
+      title: t.whyUs.features.results.title,
+      description: t.whyUs.features.results.description
     }
   ];
 
   return (
-    <section className="py-4 sm:py-8 lg:py-16 px-6 lg:px-12 bg-black">
+    <section id="why-choose-us" className="py-4 sm:py-8 lg:py-16 px-6 lg:px-12 bg-black">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,11 +40,10 @@ const WhyChooseUs = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            Pourquoi Choisir <span className="text-yathra-green">Yathra</span>
+            {t.whyUs.title} <span className="text-yathra-green">{t.whyUs.titleHighlight}</span>
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm leading-relaxed">
-            Des solutions sur mesure conçues pour répondre à vos besoins business uniques, 
-            garantissant un succès durable.
+            {t.whyUs.subtitle}
           </p>
         </motion.div>
 
@@ -89,7 +91,7 @@ const WhyChooseUs = () => {
           <div className="inline-flex items-center space-x-4">
             <div className="h-px w-16 bg-gradient-to-r from-transparent to-yathra-green"></div>
             <p className="text-gray-500 text-sm">
-              Découvrez comment nous pouvons transformer votre présence digitale
+              {t.whyUs.bottomText}
             </p>
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-yathra-green"></div>
           </div>

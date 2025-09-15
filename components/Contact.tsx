@@ -3,18 +3,21 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function Contact() {
+  const { t } = useLanguage();
+  
   const contactOptions = [
     {
-      title: "Email",
-      value: "contact@yathra.fr",
+      title: t.contact.info.email.title,
+      value: t.contact.info.email.value,
       icon: Mail,
       href: "mailto:contact@yathra.fr",
     },
     {
-      title: "Téléphone",
-      value: "+33 6 52 83 42 76",
+      title: t.contact.info.phone.title,
+      value: t.contact.info.phone.value,
       icon: Phone,
       href: "tel:+33652834276",
     },
@@ -31,10 +34,10 @@ export default function Contact() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Contactez-nous
+            {t.contact.title} <span className="text-primary">{t.contact.titleHighlight}</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            N&apos;hésitez pas à nous contacter pour discuter de votre projet
+            {t.contact.subtitle}
           </p>
         </motion.div>
 
@@ -49,7 +52,7 @@ export default function Contact() {
             <Button 
               className="bg-yathra-green text-black hover:bg-yathra-green/90 rounded-full px-8 py-6 text-sm font-semibold transition-colors"
             >
-              Démarrer votre projet
+              {t.contact.form.send}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </a>

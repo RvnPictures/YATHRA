@@ -3,8 +3,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const Projects = () => {
+  const { t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState("all");
   const [isMobile, setIsMobile] = useState(false);
 
@@ -19,54 +21,28 @@ const Projects = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const projects = [
-    {
-      id: 1,
-      title: "Parad'Ice Bar",
-      category: "Site Web",
-      filter: "website",
-      date: "Septembre 2025",
-      description: "Parad'Ice Bar est une expérience web premium et immersive pour un bar à cocktails.",
-      image: "/img/projetparadicebar.jpeg",
-      href: "https://paradicegroup.fr"
-    },
-    {
-      id: 2,
-      title: "PixEvent",
-      category: "SaaS",
-      filter: "saas",
-      date: "Septembre 2025",
-      description: "Description à venir.",
-      image: "/projects/pixevent.jpg",
-      href: "/projects/pixevent"
-    },
-    {
-      id: 3,
-      title: "Parad'Ice Coffee",
-      category: "Site Web",
-      filter: "website",
-      date: "Septembre 2025",
-      description: "Parad'Ice Coffee est une vitrine web moderne et gourmande pour des prestations premium de gaufres, crêpes et barbe à papa, pensée pour les mariages, événements d'entreprise.",
-      image: "/projects/coffee-shop.jpg",
-      href: "/projects/paradice-coffee"
-    },
-    {
-      id: 4,
-      title: "Parad'Ice Booth",
-      category: "Site Web",
-      filter: "website",
-      date: "Septembre 2025",
-      description: "Parad'Ice Booth est une vitrine web immersive et ultra-performante pour la location de photobooth et videobooth 360°.",
-      image: "/projects/booth.jpg",
-      href: "/projects/paradice-booth"
-    }
+  const projectImages = [
+    { id: 1, image: "/img/projetparadicebar.jpeg", href: "https://paradicegroup.fr", filter: "website" },
+    { id: 2, image: "/projects/pixevent.jpg", href: "/projects/pixevent", filter: "saas" },
+    { id: 3, image: "/projects/coffee-shop.jpg", href: "/projects/paradice-coffee", filter: "website" },
+    { id: 4, image: "/projects/booth.jpg", href: "/projects/paradice-booth", filter: "website" }
   ];
 
+  const projects = t?.projects?.items ? t.projects.items.map(item => {
+    const projectData = projectImages.find(p => p.id === item.id);
+    return {
+      ...item,
+      filter: projectData?.filter || 'website',
+      image: projectData?.image || '',
+      href: projectData?.href || '#'
+    };
+  }) : [];
+
   const filters = [
-    { id: "all", label: "Tout" },
-    { id: "saas", label: "SaaS" },
-    { id: "website", label: "Site Web" },
-    { id: "mobile", label: "Application Mobile" }
+    { id: "all", label: t?.projects?.filters?.all || "Tous" },
+    { id: "saas", label: t?.projects?.filters?.saas || "SaaS" },
+    { id: "website", label: t?.projects?.filters?.website || "Site Web" },
+    { id: "mobile", label: t?.projects?.filters?.mobile || "Application Mobile" }
   ];
 
   const allFilteredProjects = activeFilter === "all" 
@@ -90,11 +66,10 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Nos <span className="text-primary">Projets</span>
+            {t?.projects?.title || "Nos"} <span className="text-primary">{t?.projects?.titleHighlight || "Projets"}</span>
           </h2>
           <p className="text-gray-500 max-w-3xl mx-auto text-lg">
-            Découvrez l&apos;excellence de nos réalisations. Notre portfolio présente les collaborations réussies que nous avons eues avec
-            divers clients dans plusieurs industries. Laissez notre travail parler de lui-même.
+            {t?.projects?.subtitle || "Découvrez nos réalisations récentes"}
           </p>
         </motion.div>
 

@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   return (
     <section id="home" className="min-h-screen flex items-center justify-between px-6 lg:px-12 bg-black relative overflow-hidden pt-20">
       <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between gap-12 sm:gap-10 lg:gap-12 py-0">
@@ -16,13 +19,11 @@ const Hero = () => {
           className="flex-1 max-w-xl order-2 lg:order-1"
         >
           <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-6">
-            Notre voyage commence avec vos <span className="text-yathra-green">idées</span>.
+            {t.hero.title} <span className="text-yathra-green">{t.hero.highlight}</span>
           </h1>
           
           <p className="text-gray-400 text-sm sm:text-base lg:text-lg leading-relaxed mb-8">
-            Chez Yathra, nous créons des solutions digitales sur mesure qui propulsent votre entreprise 
-            vers de nouveaux sommets. De la conception web innovante aux applications mobiles performantes, 
-            nous transformons votre vision en succès numérique.
+            {t.hero.subtitle}
           </p>
 
           <div className="mb-8 md:mb-12">
@@ -30,7 +31,7 @@ const Hero = () => {
               <Button 
                 className="bg-yathra-green text-black hover:bg-yathra-green/90 rounded-full px-6 sm:px-8 py-5 sm:py-6 text-xs sm:text-sm font-semibold transition-colors"
               >
-                Démarrer votre projet
+                {t.hero.cta}
                 <ArrowRight className="ml-2 h-3 sm:h-4 w-3 sm:w-4" />
               </Button>
             </a>
@@ -81,7 +82,7 @@ const Hero = () => {
               className="mt-2 sm:mt-4 lg:mt-8 inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-yathra-green/10 border border-yathra-green/20"
             >
               <span className="text-yathra-green text-xs sm:text-sm font-medium">
-                Développement Web & Mobile Premium
+                {t.hero.badge}
               </span>
             </motion.div>
             <motion.div

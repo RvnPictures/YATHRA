@@ -2,61 +2,19 @@
 
 import { useEffect, useState } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const Testimonials = () => {
+  const { t } = useLanguage();
   const [isPaused, setIsPaused] = useState(false);
   const x = useMotionValue(0);
   
-  const testimonials = [
-    {
-      id: 1,
-      content: "Travailler avec Yathra a été un plaisir. Leur équipe de design web a créé un site époustouflant qui capture parfaitement l'essence de notre marque. Les retours de nos clients ont été extrêmement positifs.",
-      author: "Sarah Thompson",
-      role: "CEO chez TechStart",
-      avatar: "/testimonials/sarah.jpg",
-      company: "TechStart"
-    },
-    {
-      id: 2,
-      content: "L'application mobile que Yathra a développée pour nous a dépassé nos attentes. Son interface conviviale et ses fonctionnalités fluides nous ont valu d'excellents avis de nos utilisateurs.",
-      author: "Marc Roberts",
-      role: "Fondateur de GreenEarth Eco Store",
-      avatar: "/testimonials/marc.jpg",
-      company: "GreenEarth"
-    },
-    {
-      id: 3,
-      content: "Yathra a transformé notre présence digitale. Leur stratégie marketing a augmenté notre trafic de 200% en seulement 6 mois. Une équipe hautement recommandée !",
-      author: "Lisa Williams",
-      role: "Directrice Marketing chez HealthTech Innovations",
-      avatar: "/testimonials/lisa.jpg",
-      company: "HealthTech"
-    },
-    {
-      id: 4,
-      content: "La plateforme SaaS développée par Yathra a révolutionné notre processus de travail. Leur attention aux détails et leur capacité à comprendre nos besoins ont rendu l'ensemble du processus fluide et sans stress.",
-      author: "Michael Johnson",
-      role: "CTO chez DataFlow Solutions",
-      avatar: "/testimonials/michael.jpg",
-      company: "DataFlow"
-    },
-    {
-      id: 5,
-      content: "Un travail exceptionnel sur notre site e-commerce ! L'équipe de Yathra a livré un design moderne et une expérience utilisateur intuitive qui a considérablement augmenté nos conversions.",
-      author: "Emma Martin",
-      role: "Responsable Digital chez Fashion Forward",
-      avatar: "/testimonials/emma.jpg",
-      company: "Fashion Forward"
-    },
-    {
-      id: 6,
-      content: "L'expertise de Yathra en développement mobile est incomparable. Ils ont créé une application robuste et évolutive qui sert parfaitement notre base d'utilisateurs grandissante.",
-      author: "David Chen",
-      role: "Product Owner chez MobileTech",
-      avatar: "/testimonials/david.jpg",
-      company: "MobileTech"
-    }
-  ];
+  const testimonials = t.testimonials.items.map((item, index) => ({
+    id: index + 1,
+    ...item,
+    avatar: `/testimonials/${item.author.split(' ')[0].toLowerCase()}.jpg`,
+    company: item.role.split(' ').pop()
+  }));
 
   // Duplicate testimonials for infinite scroll
   const duplicatedTestimonials = [...testimonials, ...testimonials];
@@ -110,11 +68,10 @@ const Testimonials = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Vos <span className="text-primary">Témoignages</span>
+            {t.testimonials.title} <span className="text-primary">{t.testimonials.titleHighlight}</span>
           </h2>
           <p className="text-gray-500 max-w-3xl mx-auto text-base">
-            Ne vous fiez pas seulement à notre parole, écoutez ce que nos clients satisfaits ont à dire sur leur expérience avec Yathra. 
-            Nous sommes fiers de construire des relations durables et de fournir des résultats exceptionnels.
+            {t.testimonials.subtitle}
           </p>
         </motion.div>
       </div>

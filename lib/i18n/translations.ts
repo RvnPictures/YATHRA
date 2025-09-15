@@ -137,7 +137,7 @@ export const translations = {
         email: "Email",
         subject: "Sujet",
         message: "Message",
-        send: "Envoyer le message",
+        send: "Commencer votre projet",
         sending: "Envoi en cours..."
       },
       info: {
@@ -369,7 +369,7 @@ export const translations = {
         email: "Email",
         subject: "Subject",
         message: "Message",
-        send: "Send message",
+        send: "Start your project",
         sending: "Sending..."
       },
       info: {

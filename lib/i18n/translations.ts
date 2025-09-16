@@ -52,12 +52,12 @@ export const translations = {
         description: "Applications iOS et Android natives ou cross-platform pour toucher tous vos utilisateurs"
       },
       saas: {
-        title: "Solutions SaaS",
-        description: "Plateformes évolutives et sécurisées pour digitaliser vos processus métier"
+        title: "Design Web",
+        description: "Création d'interfaces modernes et intuitives pour une expérience utilisateur exceptionnelle"
       },
       consulting: {
-        title: "Consulting",
-        description: "Conseils stratégiques et accompagnement pour optimiser votre présence digitale"
+        title: "Marketing Digital",
+        description: "Stratégies de marketing digital pour augmenter votre visibilité et vos conversions"
       },
       cta: "En savoir plus"
     },
@@ -284,12 +284,12 @@ export const translations = {
         description: "Native or cross-platform iOS and Android applications to reach all your users"
       },
       saas: {
-        title: "SaaS Solutions",
-        description: "Scalable and secure platforms to digitize your business processes"
+        title: "Web Design",
+        description: "Creating modern and intuitive interfaces for an exceptional user experience"
       },
       consulting: {
-        title: "Consulting",
-        description: "Strategic advice and support to optimize your digital presence"
+        title: "Digital Marketing",
+        description: "Digital marketing strategies to increase your visibility and conversions"
       },
       cta: "Learn more"
     },

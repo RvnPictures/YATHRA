@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://yathra.fr</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/en</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/services</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/services"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/en/services</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/services"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/projects</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/projects"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/projects"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/projects"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/en/projects</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/projects"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/projects"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/projects"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/about</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/about"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/en/about</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/about"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/contact</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/contact"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/en/contact</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/contact"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/faq</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/faq"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/en/faq</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/faq"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/projects/paradice-bar</loc>
+    <lastmod>2025-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/projects/paradice-bar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/projects/paradice-bar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/projects/paradice-bar"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/en/projects/paradice-bar</loc>
+    <lastmod>2025-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/projects/paradice-bar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/projects/paradice-bar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/projects/paradice-bar"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/projects/pixevent</loc>
+    <lastmod>2025-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/projects/pixevent"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/projects/pixevent"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/projects/pixevent"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/en/projects/pixevent</loc>
+    <lastmod>2025-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/projects/pixevent"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/projects/pixevent"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/projects/pixevent"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/projects/paradice-coffee</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/projects/paradice-coffee"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/projects/paradice-coffee"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/projects/paradice-coffee"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/en/projects/paradice-coffee</loc>
+    <lastmod>2025-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/projects/paradice-coffee"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/projects/paradice-coffee"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/projects/paradice-coffee"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/projects/paradice-booth</loc>
+    <lastmod>2025-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/projects/paradice-booth"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/projects/paradice-booth"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/projects/paradice-booth"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/en/projects/paradice-booth</loc>
+    <lastmod>2025-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/projects/paradice-booth"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/projects/paradice-booth"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/projects/paradice-booth"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/blog/guide-developpement-app-mobile</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/blog/guide-developpement-app-mobile"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/blog/guide-developpement-app-mobile"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/blog/guide-developpement-app-mobile"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/en/blog/mobile-app-development-guide</loc>
+    <lastmod>2025-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/blog/mobile-app-development-guide"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/blog/mobile-app-development-guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/blog/mobile-app-development-guide"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/services/developpement-web</loc>
+    <lastmod>2025-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/services/developpement-web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/services/developpement-web"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/services/developpement-web"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/en/services/web-development</loc>
+    <lastmod>2025-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/services/web-development"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/services/web-development"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/services/web-development"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/services/application-mobile</loc>
+    <lastmod>2025-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/services/application-mobile"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/services/application-mobile"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/services/application-mobile"/>
+  </url>
+  <url>
+    <loc>https://yathra.fr/en/services/mobile-application</loc>
+    <lastmod>2025-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yathra.fr/services/mobile-application"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yathra.fr/en/services/mobile-application"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://yathra.fr/services/mobile-application"/>
+  </url>
+</urlset>

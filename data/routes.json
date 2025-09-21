@@ -1,0 +1,100 @@
+[
+  {
+    "path": "/projects/paradice-bar",
+    "lang": "fr",
+    "lastmod": "2025-09-15",
+    "changefreq": "monthly",
+    "priority": 0.7
+  },
+  {
+    "path": "/projects/paradice-bar",
+    "lang": "en",
+    "lastmod": "2025-09-15",
+    "changefreq": "monthly",
+    "priority": 0.7
+  },
+  {
+    "path": "/projects/pixevent",
+    "lang": "fr",
+    "lastmod": "2025-09-20",
+    "changefreq": "monthly",
+    "priority": 0.7
+  },
+  {
+    "path": "/projects/pixevent",
+    "lang": "en",
+    "lastmod": "2025-09-20",
+    "changefreq": "monthly",
+    "priority": 0.7
+  },
+  {
+    "path": "/projects/paradice-coffee",
+    "lang": "fr",
+    "lastmod": "2025-09-25",
+    "changefreq": "monthly",
+    "priority": 0.7
+  },
+  {
+    "path": "/projects/paradice-coffee",
+    "lang": "en",
+    "lastmod": "2025-09-25",
+    "changefreq": "monthly",
+    "priority": 0.7
+  },
+  {
+    "path": "/projects/paradice-booth",
+    "lang": "fr",
+    "lastmod": "2025-09-30",
+    "changefreq": "monthly",
+    "priority": 0.7
+  },
+  {
+    "path": "/projects/paradice-booth",
+    "lang": "en",
+    "lastmod": "2025-09-30",
+    "changefreq": "monthly",
+    "priority": 0.7
+  },
+  {
+    "path": "/blog/guide-developpement-app-mobile",
+    "lang": "fr",
+    "lastmod": "2025-10-01",
+    "changefreq": "weekly",
+    "priority": 0.6
+  },
+  {
+    "path": "/blog/mobile-app-development-guide",
+    "lang": "en",
+    "lastmod": "2025-10-01",
+    "changefreq": "weekly",
+    "priority": 0.6
+  },
+  {
+    "path": "/services/developpement-web",
+    "lang": "fr",
+    "lastmod": "2025-09-01",
+    "changefreq": "monthly",
+    "priority": 0.8
+  },
+  {
+    "path": "/services/web-development",
+    "lang": "en",
+    "lastmod": "2025-09-01",
+    "changefreq": "monthly",
+    "priority": 0.8
+  },
+  {
+    "path": "/services/application-mobile",
+    "lang": "fr",
+    "lastmod": "2025-09-01",
+    "changefreq": "monthly",
+    "priority": 0.8
+  },
+  {
+    "path": "/services/mobile-application",
+    "lang": "en",
+    "lastmod": "2025-09-01",
+    "changefreq": "monthly",
+    "priority": 0.8
+  }
+]

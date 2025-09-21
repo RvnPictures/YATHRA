@@ -13,8 +13,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Yathra - Agence Web Paris | Développement Application Mobile & SaaS | React Next.js",
-  description: "Agence web Paris 8ème spécialisée en développement d'applications mobiles iOS/Android et sites web sur mesure. Experts React, Next.js, Node.js. +50 projets livrés. Devis gratuit sous 48h. ROI garanti.",
-  keywords: "agence web paris, développement application mobile, création site internet, agence digitale, développement saas, react developer, next.js, node.js, transformation digitale, agence web paris 8",
+  description: "Agence web Paris spécialisée en développement d'applications mobiles iOS/Android et sites web sur mesure. Experts React, Next.js, Node.js. +50 projets livrés. Devis gratuit sous 48h. ROI garanti.",
+  keywords: "agence web paris, développement application mobile, création site internet, agence digitale, développement saas, react developer, next.js, node.js, transformation digitale, agence web france",
   authors: [{ name: "Yathra" }],
   creator: "Yathra",
   publisher: "Yathra",

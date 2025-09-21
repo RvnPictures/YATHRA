@@ -23,7 +23,7 @@ export const translations = {
     whyUs: {
       title: "Pourquoi choisir",
       titleHighlight: "Yathra",
-      subtitle: "Agence web et mobile à Paris 8ème, nous créons des solutions digitales sur mesure qui génèrent des résultats mesurables. Notre approche agile et notre expertise technique garantissent le succès de votre transformation digitale.",
+      subtitle: "Agence web et mobile à Paris, nous créons des solutions digitales sur mesure qui génèrent des résultats mesurables. Notre approche agile et notre expertise technique garantissent le succès de votre transformation digitale.",
       bottomText: "Découvrez comment notre agence web parisienne peut transformer votre présence digitale et augmenter votre chiffre d'affaires",
       features: {
         expertise: {
@@ -115,8 +115,8 @@ export const translations = {
     about: {
       title: "À propos de",
       titleHighlight: "Yathra",
-      subtitle: "Agence web et mobile Paris 8ème - Votre partenaire technique pour réussir votre transformation digitale",
-      description1: "Yathra est une agence de développement web et mobile située au cœur de Paris 8ème, spécialisée dans la création de solutions digitales sur mesure depuis 2019. Avec plus de 50 projets livrés et un taux de satisfaction client de 98%, nous sommes le partenaire technique de référence pour les startups, PME et grands comptes qui souhaitent accélérer leur croissance digitale.",
+      subtitle: "Agence web et mobile Paris - Votre partenaire technique pour réussir votre transformation digitale",
+      description1: "Yathra est une agence de développement web et mobile située au cœur de Paris, spécialisée dans la création de solutions digitales sur mesure depuis 2019. Avec plus de 50 projets livrés et un taux de satisfaction client de 98%, nous sommes le partenaire technique de référence pour les startups, PME et grands comptes qui souhaitent accélérer leur croissance digitale.",
       description2: "Notre équipe de 15 experts (développeurs full-stack, designers UX/UI, chefs de projet certifiés) maîtrise les dernières technologies web et mobile. Nous appliquons les méthodologies Agile/Scrum avec des sprints de 2 semaines pour garantir une livraison rapide et itérative. Chaque projet bénéficie d'une garantie de 6 mois et d'un support technique 7j/7.",
       stats: {
         projects: {
@@ -140,7 +140,7 @@ export const translations = {
     contact: {
       title: "Contactez",
       titleHighlight: "Nous",
-      subtitle: "Agence web Paris 8ème - Devis gratuit sous 48h. Démarrez votre projet digital avec les meilleurs experts React et Node.js de Paris.",
+      subtitle: "Agence web Paris - Devis gratuit sous 48h. Démarrez votre projet digital avec les meilleurs experts React et Node.js de Paris.",
       form: {
         name: "Nom complet",
         email: "Email",
@@ -159,8 +159,8 @@ export const translations = {
           value: "+33 1 23 45 67 89"
         },
         address: {
-          title: "Adresse",
-          value: "123 Avenue des Champs-Élysées, 75008 Paris, France"
+          title: "Localisation",
+          value: "Paris, France"
         },
         hours: {
           title: "Horaires",
@@ -404,8 +404,8 @@ export const translations = {
           value: "+33 1 23 45 67 89"
         },
         address: {
-          title: "Address",
-          value: "123 Avenue des Champs-Élysées, 75008 Paris, France"
+          title: "Location",
+          value: "Paris, France"
         },
         hours: {
           title: "Hours",

@@ -209,8 +209,8 @@ async function generateSitemap() {
       console.log(`✅ Sitemap généré: ${sitemapPath}`);
     } else {
       // Générer plusieurs sitemaps avec un index
-      const chunks = [];
-      const sitemapFiles = [];
+      const chunks: SitemapUrl[][] = [];
+      const sitemapFiles: string[] = [];
       
       for (let i = 0; i < allUrls.length; i += MAX_URLS_PER_SITEMAP) {
         const chunk = allUrls.slice(i, i + MAX_URLS_PER_SITEMAP);

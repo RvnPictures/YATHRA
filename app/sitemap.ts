@@ -51,9 +51,9 @@ const staticRoutes: RouteConfig[] = [
   },
 ];
 
-// Langues supportées
+// Langues supportées - utilisées pour le calcul du chunking
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const languages = ['fr', 'en'] as const;
-type Language = typeof languages[number];
 
 /**
  * Fonction pour récupérer les routes dynamiques

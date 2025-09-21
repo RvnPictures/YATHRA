@@ -1,0 +1,18 @@
+{
+  "description": "Liste des URLs supprimées définitivement (410 Gone)",
+  "lastUpdated": "2025-09-21",
+  "paths": [
+    "/services/webdesign-flash",
+    "/services/development-silverlight",
+    "/projects/old-client-2019",
+    "/portfolio/archived-work",
+    "/blog/wordpress-vs-joomla-2020",
+    "/actualites/flash-end-of-life",
+    "/promo/black-friday-2023",
+    "/offre/summer-deal-2023",
+    "/v1/about",
+    "/old/contact-form",
+    "/test/demo-page",
+    "/staging/preview-feature"
+  ]
+}

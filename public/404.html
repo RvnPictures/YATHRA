@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page non trouvée | Yathra</title>
+    <meta name="description" content="La page que vous recherchez n'existe pas. Découvrez nos services de développement web et mobile.">
+    <meta name="robots" content="noindex, follow">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #35D79C 0%, #28a77a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        
+        p {
+            font-size: 18px;
+            color: #999;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .search-box {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto 40px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 14px 20px 14px 48px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s;
+        }
+        
+        .search-input:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #35D79C;
+        }
+        
+        .search-input::placeholder {
+            color: #666;
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            opacity: 0.5;
+        }
+        
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        
+        .link-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .link-card:hover {
+            background: rgba(53, 215, 156, 0.1);
+            border-color: #35D79C;
+            color: #35D79C;
+            transform: translateY(-2px);
+        }
+        
+        .link-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        
+        .btn-home {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #35D79C;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .btn-home:hover {
+            background: #28a77a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(53, 215, 156, 0.3);
+        }
+        
+        .footer-text {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .footer-text a {
+            color: #35D79C;
+            text-decoration: none;
+        }
+        
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-code">404</div>
+        
+        <h1>Page introuvable</h1>
+        
+        <p>
+            Désolé, la page que vous recherchez n'existe pas ou a été déplacée.
+            Utilisez la recherche ou explorez nos pages principales ci-dessous.
+        </p>
+        
+        <div class="search-box">
+            <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <input type="text" class="search-input" placeholder="Rechercher..." disabled>
+        </div>
+        
+        <div class="links">
+            <a href="/" class="link-card">
+                <svg class="link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+                Accueil
+            </a>
+            <a href="/services" class="link-card">
+                <svg class="link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                </svg>
+                Services
+            </a>
+            <a href="/projects" class="link-card">
+                <svg class="link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                </svg>
+                Projets
+            </a>
+            <a href="/contact" class="link-card">
+                <svg class="link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                Contact
+            </a>
+        </div>
+        
+        <a href="/" class="btn-home">
+            ← Retour à l'accueil
+        </a>
+        
+        <div class="footer-text">
+            Code d'erreur : 404 | Not Found<br>
+            Besoin d'aide ? <a href="/contact">Contactez-nous</a>
+        </div>
+    </div>
+</body>
+</html>

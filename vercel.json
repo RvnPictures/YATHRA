@@ -1,0 +1,72 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  
+  "rewrites": [
+    {
+      "source": "/services/webdesign-flash",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/services/development-silverlight",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/projects/old-client-2019",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/portfolio/archived-work",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/blog/wordpress-vs-joomla-2020",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/actualites/flash-end-of-life",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/promo/black-friday-2023",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/offre/summer-deal-2023",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/v1/about",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/old/contact-form",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/test/demo-page",
+      "destination": "/api/gone"
+    },
+    {
+      "source": "/staging/preview-feature",
+      "destination": "/api/gone"
+    }
+  ],
+  
+  "headers": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "*.vercel.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive, nosnippet"
+        }
+      ]
+    }
+  ]
+}

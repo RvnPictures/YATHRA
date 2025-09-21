@@ -156,7 +156,7 @@ export const translations = {
         },
         phone: {
           title: "Téléphone",
-          value: "+33 1 23 45 67 89"
+          value: "+33 6 52 83 42 76"
         },
         address: {
           title: "Localisation",
@@ -401,7 +401,7 @@ export const translations = {
         },
         phone: {
           title: "Phone",
-          value: "+33 1 23 45 67 89"
+          value: "+33 6 52 83 42 76"
         },
         address: {
           title: "Location",

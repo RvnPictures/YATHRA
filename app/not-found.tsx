@@ -3,7 +3,7 @@ import { Search, Home, Code, Briefcase, Mail, ArrowLeft } from 'lucide-react';
 
 export const metadata = {
   title: '404 - Page non trouvée | Yathra',
-  description: 'La page que vous recherchez n\'existe pas. Découvrez nos services de développement web et mobile.',
+  description: 'La page que vous recherchez n&apos;existe pas. Découvrez nos services de développement web et mobile.',
   robots: 'noindex, follow', // Important : noindex pour éviter l'indexation des 404
 };
 
@@ -24,7 +24,7 @@ export default function NotFound() {
           Page introuvable
         </h2>
         <p className="text-gray-400 mb-8 text-lg">
-          Désolé, la page que vous recherchez n'existe pas ou a été déplacée.
+          Désolé, la page que vous recherchez n&apos;existe pas ou a été déplacée.
         </p>
 
         {/* Barre de recherche (décorative) */}
@@ -83,18 +83,18 @@ export default function NotFound() {
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-black font-semibold rounded-full hover:bg-primary/90 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            Retour à l'accueil
+            Retour à l&apos;accueil
           </Link>
           
           <p className="text-gray-500 text-sm">
-            Besoin d'aide ? <Link href="/contact" className="text-primary hover:underline">Contactez-nous</Link>
+            Besoin d&apos;aide ? <Link href="/contact" className="text-primary hover:underline">Contactez-nous</Link>
           </p>
         </div>
 
         {/* Info technique (optionnel) */}
         <div className="mt-12 text-xs text-gray-600">
-          <p>Code d'erreur : 404 | Not Found</p>
-          <p>Si vous pensez qu'il s'agit d'une erreur, veuillez nous le signaler.</p>
+          <p>Code d&apos;erreur : 404 | Not Found</p>
+          <p>Si vous pensez qu&apos;il s&apos;agit d&apos;une erreur, veuillez nous le signaler.</p>
         </div>
       </div>
     </div>

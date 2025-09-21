@@ -1,13 +1,33 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { isGonePath } from './lib/gone-paths';
+
+// Liste des paths qui doivent retourner 410 Gone
+const gonePaths = new Set([
+  '/services/webdesign-flash',
+  '/services/development-silverlight',
+  '/projects/old-client-2019',
+  '/portfolio/archived-work',
+  '/blog/wordpress-vs-joomla-2020',
+  '/actualites/flash-end-of-life',
+  '/promo/black-friday-2023',
+  '/offre/summer-deal-2023',
+  '/v1/about',
+  '/old/contact-form',
+  '/test/demo-page',
+  '/staging/preview-feature',
+]);
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const hostname = request.headers.get('host') || '';
   
+  // Normaliser le path
+  const normalizedPath = pathname.endsWith('/') && pathname !== '/' 
+    ? pathname.slice(0, -1) 
+    : pathname;
+  
   // 1. Gestion des URLs 410 Gone
-  if (isGonePath(pathname)) {
+  if (gonePaths.has(normalizedPath)) {
     // Retourner 410 avec noindex pour les contenus supprimés définitivement
     return new NextResponse(
       `<!DOCTYPE html>
@@ -73,19 +93,5 @@ export function middleware(request: NextRequest) {
 
 // Configuration du middleware
 export const config = {
-  // Appliquer le middleware à toutes les routes sauf :
-  // - API routes
-  // - Static files (_next/static, favicon, etc.)
-  // - Image optimization files (_next/image)
-  matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico, sitemap.xml, robots.txt (metadata files)
-     * - Images and other static assets
-     */
-    '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|css|js)$).*)',
-  ],
+  matcher: '/:path*',
 };

@@ -3,10 +3,7 @@
 import { motion } from "framer-motion";
 import { Linkedin, Instagram, Twitter } from "lucide-react";
 import Image from "next/image";
-import { useLanguage } from "@/lib/i18n/LanguageContext";
-
 const Footer = () => {
-  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -29,7 +26,7 @@ const Footer = () => {
               height={12}
               className="inline-block object-contain"
             />
-            <span>{t.footer.copyright.replace('2024', currentYear.toString()).replace('© ', '').replace('Yathra. ', '')}</span>
+            <span>Tous droits réservés.</span>
           </div>
           <div className="flex gap-4">
             <a

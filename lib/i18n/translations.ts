@@ -15,8 +15,8 @@ export const translations = {
       secondaryCta: "Voir nos projets",
       badge: "Agence Développement Web & Mobile Paris",
       stats: {
-        projects: "+50 Projets livrés",
-        satisfaction: "98% Satisfaction client",
+        projects: "5 Projets livrés",
+        satisfaction: "100% Satisfaction client",
         experience: "5+ Années d'expertise"
       }
     },

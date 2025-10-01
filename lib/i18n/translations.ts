@@ -116,15 +116,15 @@ export const translations = {
       title: "À propos de",
       titleHighlight: "Yathra",
       subtitle: "Agence web et mobile Paris - Votre partenaire technique pour réussir votre transformation digitale",
-      description1: "Yathra est une agence de développement web et mobile située au cœur de Paris, spécialisée dans la création de solutions digitales sur mesure depuis 2019. Avec plus de 50 projets livrés et un taux de satisfaction client de 98%, nous sommes le partenaire technique de référence pour les startups, PME et grands comptes qui souhaitent accélérer leur croissance digitale.",
-      description2: "Notre équipe de 15 experts (développeurs full-stack, designers UX/UI, chefs de projet certifiés) maîtrise les dernières technologies web et mobile. Nous appliquons les méthodologies Agile/Scrum avec des sprints de 2 semaines pour garantir une livraison rapide et itérative. Chaque projet bénéficie d'une garantie de 6 mois et d'un support technique 7j/7.",
+      description1: "Fondée par deux développeurs full-stack, Yathra est une agence web et mobile à Paris spécialisée dans la création de solutions digitales sur mesure depuis 2025. Avec 5 projets livrés et 100 % de satisfaction client, nous accompagnons startups, PME et grands comptes dans leur croissance digitale : développement web, développement mobile, sites vitrines, applications métiers, UX/UI design, SEO / référencement naturel et maintenance.",
+      description2: "Équipe à taille humaine, nous travaillons en méthodologie Agile/Scrum avec des sprints de 2 semaines pour des itérations rapides et mesurables, en nous appuyant au besoin sur un réseau de designers UX/UI et de chefs de projet certifiés. Chaque projet bénéficie d'une garantie de 3 mois et d'un support technique 7j/7, pour des résultats performants, sécurisés et évolutifs.",
       stats: {
         projects: {
-          value: "+50",
+          value: "5",
           label: "Projets livrés avec succès"
         },
         clients: {
-          value: "98%",
+          value: "100%",
           label: "Taux de satisfaction client"
         },
         experience: {

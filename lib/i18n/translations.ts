@@ -15,7 +15,7 @@ export const translations = {
       secondaryCta: "Voir nos projets",
       badge: "Agence Développement Web & Mobile Paris",
       stats: {
-        projects: "5 Projets livrés",
+        projects: "50+ Projets livrés",
         satisfaction: "100% Satisfaction client",
         experience: "5+ Années d'expertise"
       }
@@ -116,11 +116,11 @@ export const translations = {
       title: "À propos de",
       titleHighlight: "Yathra",
       subtitle: "Agence web et mobile Paris - Votre partenaire technique pour réussir votre transformation digitale",
-      description1: "Fondée par deux développeurs full-stack, Yathra est une agence web et mobile à Paris spécialisée dans la création de solutions digitales sur mesure depuis 2025. Avec 5 projets livrés et 100 % de satisfaction client, nous accompagnons startups, PME et grands comptes dans leur croissance digitale : développement web, développement mobile, sites vitrines, applications métiers, UX/UI design, SEO / référencement naturel et maintenance.",
+      description1: "Fondée par deux développeurs full-stack, Yathra est une agence web et mobile à Paris spécialisée dans la création de solutions digitales sur mesure depuis 2025. Avec 50+ projets livrés et 100 % de satisfaction client, nous accompagnons startups, PME et grands comptes dans leur croissance digitale : développement web, développement mobile, sites vitrines, applications métiers, UX/UI design, SEO / référencement naturel et maintenance.",
       description2: "Équipe à taille humaine, nous travaillons en méthodologie Agile/Scrum avec des sprints de 2 semaines pour des itérations rapides et mesurables, en nous appuyant au besoin sur un réseau de designers UX/UI et de chefs de projet certifiés. Chaque projet bénéficie d'une garantie de 3 mois et d'un support technique 7j/7, pour des résultats performants, sécurisés et évolutifs.",
       stats: {
         projects: {
-          value: "5",
+          value: "50+",
           label: "Projets livrés avec succès"
         },
         clients: {
@@ -223,7 +223,7 @@ export const translations = {
       items: [
         {
           question: "Combien coûte le développement d'un site web professionnel ?",
-          answer: "Le prix dépend de vos besoins spécifiques. Un site vitrine professionnel démarre à 3 000€ (5-10 pages, responsive, SEO optimisé). Un site e-commerce complet varie de 8 000€ à 25 000€ selon les fonctionnalités. Une plateforme SaaS sur mesure débute à 20 000€. Nous offrons un devis détaillé gratuit sous 48h avec garantie du prix fixé. Paiement possible en 3x sans frais."
+          answer: "Le prix dépend entièrement de vos besoins spécifiques et de la complexité de votre projet. Chaque solution étant développée sur mesure, nous proposons un devis personnalisé et détaillé gratuit sous 48h. Notre équipe analyse vos objectifs, fonctionnalités souhaitées et contraintes techniques pour vous proposer la solution la plus adaptée à votre budget. Contactez-nous pour obtenir votre devis sur mesure avec garantie du prix fixé. Paiement possible en 3x sans frais."
         },
         {
           question: "Quelle est votre méthodologie de développement et comment suivre mon projet ?",
@@ -231,7 +231,7 @@ export const translations = {
         },
         {
           question: "Proposez-vous la maintenance et le support après la livraison du projet ?",
-          answer: "Oui, tous nos projets incluent 6 mois de garantie avec corrections de bugs gratuites. Nous proposons ensuite 3 formules de maintenance : Essentielle (99€/mois) pour les mises à jour de sécurité, Premium (299€/mois) avec évolutions mineures et support prioritaire, Enterprise (sur devis) avec SLA garanti, monitoring 24/7 et évolutions majeures. 95% de nos clients choisissent une formule de maintenance pour garantir la pérennité de leur investissement."
+          answer: "Oui, tous nos projets incluent 6 mois de garantie avec corrections de bugs gratuites. Nous proposons ensuite plusieurs formules de maintenance adaptées à vos besoins : maintenance essentielle pour les mises à jour de sécurité, formule premium avec évolutions mineures et support prioritaire, ou encore formule enterprise avec SLA garanti, monitoring 24/7 et évolutions majeures. Les tarifs sont personnalisés selon vos besoins spécifiques. Contactez-nous pour un devis maintenance sur mesure. 95% de nos clients choisissent une formule de maintenance pour garantir la pérennité de leur investissement."
         },
         {
           question: "Quelles technologies utilisez-vous et pourquoi sont-elles les meilleures pour mon projet ?",

@@ -23,9 +23,9 @@ const Projects = () => {
 
   const projectImages = [
     { id: 1, image: "/img/projetparadicebar.jpeg", href: "https://paradicegroup.fr", filter: "website" },
-    { id: 2, image: "/projects/pixevent.jpg", href: "/projects/pixevent", filter: "saas" },
-    { id: 3, image: "/projects/coffee-shop.jpg", href: "/projects/paradice-coffee", filter: "website" },
-    { id: 4, image: "/projects/booth.jpg", href: "/projects/paradice-booth", filter: "website" }
+    { id: 2, image: "/projects/pixevent.png", href: "/projects/pixevent", filter: "saas" },
+    { id: 3, image: "/projects/paradise-coffee.png", href: "/projects/paradice-coffee", filter: "website" },
+    { id: 4, image: "/projects/paradise-booth.png", href: "/projects/paradice-booth", filter: "website" }
   ];
 
   const projects = t?.projects?.items ? t.projects.items.map(item => {

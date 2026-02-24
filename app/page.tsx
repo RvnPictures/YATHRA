@@ -171,10 +171,12 @@ export default function Home() {
               <Image src="/logos/paradice-bar-2.png" alt="Parad'Ice Bar" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
               <Image src="/logos/paradice-booth-2.png" alt="Parad'Ice Booth" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
               <Image src="/logos/paradice-coffee-2.png" alt="Parad'Ice Coffee" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/prepcivique.png" alt="PrepCivique" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
               <Image src="/logos/ophir-estate-2.png" alt="Ophir Estate" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
               <Image src="/logos/paradice-bar-2.png" alt="Parad'Ice Bar" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
               <Image src="/logos/paradice-booth-2.png" alt="Parad'Ice Booth" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
               <Image src="/logos/paradice-coffee-2.png" alt="Parad'Ice Coffee" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/prepcivique.png" alt="PrepCivique" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
             </div>
             {/* Duplicate set for seamless loop */}
             <div className="flex items-center gap-16 md:gap-24 px-8 shrink-0">
@@ -182,10 +184,12 @@ export default function Home() {
               <Image src="/logos/paradice-bar-2.png" alt="Parad'Ice Bar" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
               <Image src="/logos/paradice-booth-2.png" alt="Parad'Ice Booth" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
               <Image src="/logos/paradice-coffee-2.png" alt="Parad'Ice Coffee" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/prepcivique.png" alt="PrepCivique" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
               <Image src="/logos/ophir-estate-2.png" alt="Ophir Estate" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
               <Image src="/logos/paradice-bar-2.png" alt="Parad'Ice Bar" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
               <Image src="/logos/paradice-booth-2.png" alt="Parad'Ice Booth" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
               <Image src="/logos/paradice-coffee-2.png" alt="Parad'Ice Coffee" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/prepcivique.png" alt="PrepCivique" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
             </div>
           </div>
         </div>

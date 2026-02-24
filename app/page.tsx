@@ -2,74 +2,58 @@
 
 import Image from "next/image";
 import Icon from "@/components/Icon";
+import { useState, useEffect } from "react";
+import { useLenis } from "@/hooks/useLenis";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import CTASection from "@/components/CTASection";
+import BackgroundBlobs from "@/components/BackgroundBlobs";
+
+const words = ["websites", "mobile apps", "SaaS"];
+const wordWidths = ["4.8em", "6.2em", "3.2em"]; // Largeurs approximatives pour chaque mot
 
 export default function Home() {
+  const [wordIndex, setWordIndex] = useState(0);
+  const [animation, setAnimation] = useState<"" | "out" | "in">("");
+  const [cursorPhase, setCursorPhase] = useState<"idle" | "approach" | "push" | "return">("idle");
+
+  useLenis();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Étape 1: Le curseur s'approche du mot
+      setCursorPhase("approach");
+
+      // Étape 2: Le curseur pousse et le mot sort
+      setTimeout(() => {
+        setCursorPhase("push");
+        setAnimation("out");
+      }, 400);
+
+      // Étape 3: Le mot change et apparaît
+      setTimeout(() => {
+        setWordIndex((prev) => (prev + 1) % words.length);
+        setAnimation("in");
+      }, 800);
+
+      // Étape 4: Le curseur redescend
+      setTimeout(() => {
+        setCursorPhase("idle");
+      }, 1000);
+
+      // Étape 5: Reset animation
+      setTimeout(() => {
+        setAnimation("");
+      }, 1200);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <>
-      {/* Background Gradients */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-900/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob"></div>
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-900/10 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-32 left-1/3 w-96 h-96 bg-indigo-900/10 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-4000"></div>
-      </div>
-
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          {/* Logo */}
-          <a
-            href="#"
-            className="text-xl font-semibold tracking-tight text-white flex items-center gap-2 z-50"
-          >
-            <span className="w-8 h-8 rounded-lg bg-white text-black flex items-center justify-center font-bold text-sm tracking-tighter">
-              Y.
-            </span>
-            <span className="hidden sm:block">Yathra</span>
-          </a>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-1 p-1 bg-white/5 rounded-full border border-white/5 backdrop-blur-md">
-            <a
-              href="#work"
-              className="px-5 py-2 text-sm text-gray-300 hover:text-white rounded-full hover:bg-white/5 transition-all"
-            >
-              Work
-            </a>
-            <a
-              href="#services"
-              className="px-5 py-2 text-sm text-gray-300 hover:text-white rounded-full hover:bg-white/5 transition-all"
-            >
-              Services
-            </a>
-            <a
-              href="#agency"
-              className="px-5 py-2 text-sm text-gray-300 hover:text-white rounded-full hover:bg-white/5 transition-all"
-            >
-              About
-            </a>
-            <a
-              href="#pricing"
-              className="px-5 py-2 text-sm text-gray-300 hover:text-white rounded-full hover:bg-white/5 transition-all"
-            >
-              Pricing
-            </a>
-          </div>
-
-          {/* CTA */}
-          <div className="flex items-center gap-4">
-            <a
-              href="#contact"
-              className="group flex items-center gap-2 bg-white text-black px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-gray-200 transition-all"
-            >
-              Let&apos;s talk
-              <Icon icon="solar:arrow-right-up-linear" width={18} />
-            </a>
-            <button className="md:hidden text-white pt-1">
-              <Icon icon="solar:hamburger-menu-linear" width={28} />
-            </button>
-          </div>
-        </div>
-      </nav>
+    <div className="relative overflow-hidden">
+      <BackgroundBlobs variant="home" />
+      <Navbar />
 
       {/* Hero Section */}
       <main className="relative z-10 pt-32 lg:pt-48 px-6">
@@ -85,18 +69,56 @@ export default function Home() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight leading-[1.1] text-white max-w-5xl mx-auto mb-8">
-              We craft digital <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-300 to-indigo-400">
-                experiences
-              </span>{" "}
-              that scale.
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight leading-[1.15] text-white max-w-5xl mx-auto mb-8">
+              <span className={`block transition-all duration-500 ease-out ${animation === "out" ? "opacity-80" : "opacity-100"}`}>
+                We craft{" "}
+                <span className="relative inline-block align-baseline">
+                  <span
+                    className="relative inline-flex items-center transition-all duration-500 ease-out"
+                    style={{ width: wordWidths[wordIndex] }}
+                  >
+                    <span className="overflow-hidden h-[1.3em]">
+                      <span
+                        className={`glass-bubble inline-block whitespace-nowrap ${
+                          animation === "out" ? "word-swipe-out" : animation === "in" ? "word-swipe-in" : ""
+                        }`}
+                      >
+                        {words[wordIndex]}
+                      </span>
+                    </span>
+                    {/* Animated cursor - starts right, moves left to select, then slides up */}
+                    <span
+                      className={`absolute top-1/2 -right-10 ${
+                        cursorPhase === "idle" ? "cursor-idle" :
+                        cursorPhase === "approach" ? "cursor-approach" :
+                        cursorPhase === "push" ? "cursor-push" :
+                        "cursor-return"
+                      }`}
+                    >
+                      <svg
+                        width="28"
+                        height="28"
+                        viewBox="0 0 24 24"
+                        fill="white"
+                        className="drop-shadow-lg"
+                      >
+                        <path d="M4 0L20 12L12 14L8 24L4 0Z" />
+                      </svg>
+                    </span>
+                  </span>
+                </span>
+              </span>
+              <span className="block">
+                that users{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 italic inline-block pr-2">
+                  love
+                </span>
+              </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl font-light leading-relaxed mb-12">
-              An award-winning design agency transforming businesses through
-              creative strategy, branding, and powerful web development.
+              Premium digital agency turning bold ideas into products that captivate, convert, and scale.
             </p>
 
             {/* Showreel / Video Placeholder */}
@@ -133,6 +155,7 @@ export default function Home() {
         </div>
       </main>
 
+
       {/* Logo Marquee */}
       <section className="py-16 md:py-24 overflow-hidden relative z-10">
         <div className="max-w-7xl mx-auto px-6 mb-8 flex justify-between items-end">
@@ -140,40 +163,427 @@ export default function Home() {
             TRUSTED BY INNOVATORS
           </p>
         </div>
-        <div className="relative w-full flex overflow-x-hidden border-y border-white/5 bg-white/[0.01]">
+        <div className="relative w-full flex overflow-x-hidden bg-white/[0.02] border-y border-white/5">
           <div className="marquee-content py-8 items-center">
-            {/* Repeated Logos */}
-            <div className="flex items-center gap-16 md:gap-32 px-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-300">
-              <span className="text-2xl font-semibold tracking-tight flex gap-2 items-center">
-                <Icon icon="solar:infinity-linear" width={32} /> Linear
-              </span>
-              <span className="text-2xl font-semibold tracking-tight flex gap-2 items-center">
-                <Icon icon="solar:cube-linear" width={32} /> Dropbox
-              </span>
-              <span className="text-2xl font-semibold tracking-tight flex gap-2 items-center">
-                <Icon icon="solar:wallet-linear" width={32} /> Coinbase
-              </span>
-              <span className="text-2xl font-semibold tracking-tight flex gap-2 items-center">
-                <Icon icon="solar:bolt-linear" width={32} /> Stripe
-              </span>
-              <span className="text-2xl font-semibold tracking-tight flex gap-2 items-center">
-                <Icon icon="solar:plain-linear" width={32} /> Vercel
-              </span>
-              <span className="text-2xl font-semibold tracking-tight flex gap-2 items-center">
-                <Icon icon="solar:infinity-linear" width={32} /> Linear
-              </span>
-              <span className="text-2xl font-semibold tracking-tight flex gap-2 items-center">
-                <Icon icon="solar:cube-linear" width={32} /> Dropbox
-              </span>
-              <span className="text-2xl font-semibold tracking-tight flex gap-2 items-center">
-                <Icon icon="solar:wallet-linear" width={32} /> Coinbase
-              </span>
-              <span className="text-2xl font-semibold tracking-tight flex gap-2 items-center">
-                <Icon icon="solar:bolt-linear" width={32} /> Stripe
-              </span>
-              <span className="text-2xl font-semibold tracking-tight flex gap-2 items-center">
-                <Icon icon="solar:plain-linear" width={32} /> Vercel
-              </span>
+            {/* First set of logos */}
+            <div className="flex items-center gap-16 md:gap-24 px-8 shrink-0">
+              <Image src="/logos/ophir-estate-2.png" alt="Ophir Estate" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/paradice-bar-2.png" alt="Parad'Ice Bar" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/paradice-booth-2.png" alt="Parad'Ice Booth" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/paradice-coffee-2.png" alt="Parad'Ice Coffee" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/ophir-estate-2.png" alt="Ophir Estate" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/paradice-bar-2.png" alt="Parad'Ice Bar" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/paradice-booth-2.png" alt="Parad'Ice Booth" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/paradice-coffee-2.png" alt="Parad'Ice Coffee" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+            </div>
+            {/* Duplicate set for seamless loop */}
+            <div className="flex items-center gap-16 md:gap-24 px-8 shrink-0">
+              <Image src="/logos/ophir-estate-2.png" alt="Ophir Estate" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/paradice-bar-2.png" alt="Parad'Ice Bar" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/paradice-booth-2.png" alt="Parad'Ice Booth" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/paradice-coffee-2.png" alt="Parad'Ice Coffee" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/ophir-estate-2.png" alt="Ophir Estate" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/paradice-bar-2.png" alt="Parad'Ice Bar" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/paradice-booth-2.png" alt="Parad'Ice Booth" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+              <Image src="/logos/paradice-coffee-2.png" alt="Parad'Ice Coffee" width={200} height={80} className="h-20 w-auto object-contain grayscale brightness-200 opacity-70 hover:grayscale-0 hover:brightness-100 hover:opacity-100 transition-all duration-300" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Results Section */}
+      <section className="pt-12 md:pt-16 pb-24 md:pb-32 px-6 relative z-10">
+        <div className="max-w-7xl mx-auto relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            {/* Left side - Label */}
+            <div>
+              <p className="text-sm text-gray-400 font-medium tracking-widest uppercase">Results</p>
+            </div>
+
+            {/* Right side - Content */}
+            <div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-tight mb-16">
+                <span className="italic">Yathra</span> is your perfect choice in terms of
+              </h2>
+
+              {/* Features list */}
+              <div className="space-y-0">
+                <div className="flex items-center gap-8 py-6 border-b border-white/10">
+                  <span className="text-2xl text-gray-400 font-mono">{`{/}`}</span>
+                  <p className="text-xl text-white font-light">Hiring system with immediate start</p>
+                </div>
+                <div className="flex items-center gap-8 py-6 border-b border-white/10">
+                  <span className="text-2xl text-gray-400 font-mono">{`{/}`}</span>
+                  <p className="text-xl text-white font-light">Guaranteed on-time deliverables</p>
+                </div>
+                <div className="flex items-center gap-8 py-6">
+                  <span className="text-2xl text-gray-400 font-mono">{`{/}`}</span>
+                  <p className="text-xl text-white font-light">Flexible collaboration & fixed monthly rate</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-24 md:py-32 px-6 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <p className="text-sm text-gray-400 font-medium tracking-widest uppercase mb-6">Services</p>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-tight">
+              <span className="block whitespace-nowrap">Digital Product Design & Development</span>
+              <span className="block italic">Services We Offer</span>
+            </h2>
+          </div>
+
+          {/* Services Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Design Card */}
+            <div className="glass-card rounded-[2rem] p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/10 rounded-full blur-[60px] group-hover:bg-purple-500/20 transition-all"></div>
+              <h3 className="text-2xl font-semibold text-white mb-8 relative z-10">Design</h3>
+              <div className="space-y-0 relative z-10">
+                <div className="service-row flex items-center justify-between py-5 border-b border-white/10 cursor-pointer">
+                  <span className="text-gray-300 transition-colors">UI/UX Design</span>
+                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </div>
+                <div className="service-row flex items-center justify-between py-5 border-b border-white/10 cursor-pointer">
+                  <span className="text-gray-300 transition-colors">Web Design</span>
+                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </div>
+                <div className="service-row flex items-center justify-between py-5 border-b border-white/10 cursor-pointer">
+                  <span className="text-gray-300 transition-colors">Mobile App Design</span>
+                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </div>
+                <div className="service-row flex items-center justify-between py-5 border-b border-white/10 cursor-pointer">
+                  <span className="text-gray-300 transition-colors">Website Redesign</span>
+                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </div>
+                <div className="service-row flex items-center justify-between py-5 cursor-pointer">
+                  <span className="text-gray-300 transition-colors">UX/UI Audit</span>
+                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            {/* Development Card */}
+            <div className="glass-card rounded-[2rem] p-8 md:p-10 relative overflow-hidden group hover:border-white/20 transition-all">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-blue-500/10 rounded-full blur-[60px] group-hover:bg-blue-500/20 transition-all"></div>
+              <h3 className="text-2xl font-semibold text-white mb-8 relative z-10">Development</h3>
+              <div className="space-y-0 relative z-10">
+                <div className="service-row flex items-center justify-between py-5 border-b border-white/10 cursor-pointer">
+                  <span className="text-gray-300 transition-colors">Web Development</span>
+                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </div>
+                <div className="service-row flex items-center justify-between py-5 border-b border-white/10 cursor-pointer">
+                  <span className="text-gray-300 transition-colors">MVP Development</span>
+                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </div>
+                <div className="service-row flex items-center justify-between py-5 border-b border-white/10 cursor-pointer">
+                  <span className="text-gray-300 transition-colors">WebFlow Development</span>
+                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </div>
+                <div className="service-row flex items-center justify-between py-5 border-b border-white/10 cursor-pointer">
+                  <span className="text-gray-300 transition-colors">Landing Page</span>
+                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </div>
+                <div className="service-row flex items-center justify-between py-5 cursor-pointer">
+                  <span className="text-gray-300 transition-colors">Mobile Development</span>
+                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Bubble */}
+          <div className="mt-10 flex justify-center">
+            <div className="glass-card rounded-full py-4 px-6 flex items-center gap-6 hover:border-white/20 transition-all">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-white font-semibold text-lg">
+                Y
+              </div>
+              <p className="text-white font-light text-sm md:text-base">
+                Ready to turn your vision into reality?<br className="hidden md:block" /> Let&apos;s create something extraordinary together.
+              </p>
+              <a href="#contact" className="flex items-center gap-2 bg-white text-black font-medium pl-5 pr-2 py-2 rounded-full hover:bg-gray-100 transition-all text-sm group">
+                Book a Call
+                <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                  <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="work" className="py-24 md:py-32 px-6 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <p className="text-sm text-gray-400 font-medium tracking-widest uppercase mb-6">Our Work</p>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-tight">
+              Projects that <span className="italic">speak for themselves</span>
+            </h2>
+          </div>
+
+          {/* Project 1 - Ophir Estate */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-32">
+            {/* Left - Text (Sticky) */}
+            <div className="lg:sticky lg:top-32 lg:self-start">
+              {/* Tags */}
+              <div className="flex flex-wrap gap-3 mb-8">
+                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">Real Estate</span>
+                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">Web Design</span>
+                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">🇫🇷</span>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-3xl md:text-4xl font-medium text-white mb-8 leading-tight">
+                Ophir Estate achieved a 40% increase in qualified leads with our premium web design
+              </h3>
+
+              {/* Divider */}
+              <div className="w-full h-px bg-white/10 mb-8"></div>
+
+              {/* Testimonial */}
+              <div className="mb-8">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-white font-medium">Client Review</span>
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-400 text-lg leading-relaxed italic">
+                  &ldquo;Yathra transformed our digital presence with exceptional attention to detail. Their creative approach perfectly captured our luxury brand identity.&rdquo;
+                </p>
+              </div>
+
+              {/* Author */}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white font-semibold">
+                    O
+                  </div>
+                  <div>
+                    <p className="text-white font-medium italic">Ophir Estate</p>
+                    <p className="text-gray-500 text-sm">Luxury Real Estate, France</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right - Images */}
+            <div className="space-y-6">
+              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
+                <Image
+                  src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop"
+                  alt="Ophir Estate Project"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
+                <Image
+                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
+                  alt="Ophir Estate Project"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
+                <Image
+                  src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop"
+                  alt="Ophir Estate Project"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Project 2 - Parad'Ice */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-32">
+            {/* Left - Text (Sticky) */}
+            <div className="lg:sticky lg:top-32 lg:self-start">
+              {/* Tags */}
+              <div className="flex flex-wrap gap-3 mb-8">
+                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">Hospitality</span>
+                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">Branding</span>
+                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">🇫🇷</span>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-3xl md:text-4xl font-medium text-white mb-8 leading-tight">
+                Parad&apos;Ice Bar & Coffee tripled their online bookings with our complete brand identity
+              </h3>
+
+              {/* Divider */}
+              <div className="w-full h-px bg-white/10 mb-8"></div>
+
+              {/* Testimonial */}
+              <div className="mb-8">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-white font-medium">Client Review</span>
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-400 text-lg leading-relaxed italic">
+                  &ldquo;The neon-inspired branding Yathra created for us perfectly captures our vibrant atmosphere. Our customers love the new visual identity!&rdquo;
+                </p>
+              </div>
+
+              {/* Author */}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-pink-500 flex items-center justify-center text-white font-semibold">
+                    P
+                  </div>
+                  <div>
+                    <p className="text-white font-medium italic">Parad&apos;Ice Group</p>
+                    <p className="text-gray-500 text-sm">Bar & Coffee Chain, France</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right - Images */}
+            <div className="space-y-6">
+              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
+                <Image
+                  src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=2074&auto=format&fit=crop"
+                  alt="Parad'Ice Project"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
+                <Image
+                  src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=2069&auto=format&fit=crop"
+                  alt="Parad'Ice Project"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
+                <Image
+                  src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070&auto=format&fit=crop"
+                  alt="Parad'Ice Project"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Project 3 - Tech Startup */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+            {/* Left - Text (Sticky) */}
+            <div className="lg:sticky lg:top-32 lg:self-start">
+              {/* Tags */}
+              <div className="flex flex-wrap gap-3 mb-8">
+                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">SaaS</span>
+                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">Web App</span>
+                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">🇪🇺</span>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-3xl md:text-4xl font-medium text-white mb-8 leading-tight">
+                A fintech startup secured €1.2M funding after launching their MVP built by Yathra
+              </h3>
+
+              {/* Divider */}
+              <div className="w-full h-px bg-white/10 mb-8"></div>
+
+              {/* Testimonial */}
+              <div className="mb-8">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-white font-medium">Client Review</span>
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-gray-400 text-lg leading-relaxed italic">
+                  &ldquo;Yathra delivered our MVP in record time without compromising on quality. The product impressed our investors and helped us close our seed round.&rdquo;
+                </p>
+              </div>
+
+              {/* Author */}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-semibold">
+                    F
+                  </div>
+                  <div>
+                    <p className="text-white font-medium italic">Fintech Startup</p>
+                    <p className="text-gray-500 text-sm">Financial Technology, Europe</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right - Images */}
+            <div className="space-y-6">
+              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
+                <Image
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+                  alt="Fintech Project"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
+                <Image
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+                  alt="Fintech Project"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
+                <Image
+                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop"
+                  alt="Fintech Project"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -302,109 +712,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section id="contact" className="py-24 px-6 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-white mb-8">
-            Have an idea? <br />
-            <span className="text-gray-500">Let&apos;s build it together.</span>
-          </h2>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
-            <button className="w-full sm:w-auto h-16 px-10 rounded-full bg-white text-black font-semibold text-lg hover:bg-gray-200 transition-all flex items-center justify-center gap-2 group">
-              Start a project
-              <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center group-hover:rotate-45 transition-transform">
-                <Icon icon="solar:arrow-right-up-linear" width={16} />
-              </div>
-            </button>
-            <button className="w-full sm:w-auto h-16 px-10 rounded-full border border-white/10 bg-white/5 text-white font-medium text-lg hover:bg-white/10 transition-all">
-              hello@yathra.agency
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-white/5 py-16 px-6 bg-black/40">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
-            <div className="max-w-xs">
-              <a
-                href="#"
-                className="text-2xl font-semibold tracking-tight text-white flex items-center gap-2 mb-6"
-              >
-                Yathra.
-              </a>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                A digital product agency crafting experiences that combine
-                design, technology, and strategy.
-              </p>
-            </div>
-            <div className="flex gap-16 flex-wrap">
-              <div>
-                <h4 className="text-white font-medium mb-4">Sitemap</h4>
-                <ul className="space-y-3 text-sm text-gray-500">
-                  <li>
-                    <a href="#" className="hover:text-white transition-colors">
-                      Work
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white transition-colors">
-                      Services
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white transition-colors">
-                      Agency
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white transition-colors">
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-medium mb-4">Socials</h4>
-                <ul className="space-y-3 text-sm text-gray-500">
-                  <li>
-                    <a href="#" className="hover:text-white transition-colors">
-                      Twitter / X
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white transition-colors">
-                      Instagram
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white transition-colors">
-                      LinkedIn
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white transition-colors">
-                      Dribbble
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
-            <div>© 2024 Yathra Agency. All rights reserved.</div>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-gray-400">
-                Privacy Policy
-              </a>
-              <a href="#" className="hover:text-gray-400">
-                Terms of Service
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </>
+      <CTASection />
+      <Footer />
+    </div>
   );
 }

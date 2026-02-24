@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,6 +11,35 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Smooth scroll like gliding on ice */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+}
+
+/* Lenis smooth scroll styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 body {
@@ -59,6 +88,20 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+/* Glass bubble effect - iOS style */
+.glass-bubble {
+  display: inline-flex;
+  padding: 0.08em 0.4em 0.18em 0.4em;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+}
+
 .glass-nav {
   background: rgba(5, 5, 7, 0.7);
   backdrop-filter: blur(16px);
@@ -99,4 +142,95 @@ body {
 
 .animate-blob {
   animation: blob 10s infinite;
+}
+
+/* Word swipe animation */
+.word-swipe-out {
+  animation: swipeOut 0.4s ease-in forwards;
+}
+
+.word-swipe-in {
+  animation: swipeIn 0.4s ease-out forwards;
+}
+
+@keyframes swipeOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes swipeIn {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Cursor animations - human-like */
+.cursor-idle {
+  transform: translateX(0) translateY(-50%) rotate(0deg);
+  transition: all 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+.cursor-approach {
+  transform: translateX(-40px) translateY(-50%) rotate(-15deg);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cursor-push {
+  transform: translateX(-40px) translateY(-150%) rotate(10deg);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.cursor-return {
+  transform: translateX(0) translateY(-50%) rotate(0deg);
+  transition: all 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+/* Service row hover animation */
+.service-row {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-row::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  right: -1rem;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border-radius: 0.75rem;
+  opacity: 0;
+  transform: scaleX(0.97);
+  transform-origin: left;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-row:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.service-row:hover {
+  padding-left: 0.75rem;
+}
+
+.service-row:hover span {
+  color: #fff;
+}
+
+.service-row:hover svg {
+  color: #fff;
+  transform: translate(3px, -3px);
 }

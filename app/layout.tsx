@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Yathra - Digital Product Agency",
+  title: "Yathra-WebSite - Digital Product Agency",
   description:
     "An award-winning design agency transforming businesses through creative strategy, branding, and powerful web development.",
 };

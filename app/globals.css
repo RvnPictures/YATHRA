@@ -110,12 +110,27 @@ body {
 }
 
 /* Marquee */
-.marquee-content {
+.marquee-track {
   display: flex;
-  animation: scroll 30s linear infinite;
+  width: max-content;
+  animation: marquee-scroll 25s linear infinite;
 }
 
-@keyframes scroll {
+.marquee-set {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 0 2rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .marquee-set {
+    gap: 6rem;
+  }
+}
+
+@keyframes marquee-scroll {
   0% {
     transform: translateX(0);
   }

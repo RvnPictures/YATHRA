@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import Icon from "@/components/Icon";
 import { useState, useEffect } from "react";
 import { useLenis } from "@/hooks/useLenis";
@@ -8,6 +9,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import BackgroundBlobs from "@/components/BackgroundBlobs";
+import { projects } from "@/data/projects";
 
 const words = ["websites", "mobile apps", "SaaS"];
 const wordWidths = ["4.8em", "6.2em", "3.2em"]; // Largeurs approximatives pour chaque mot
@@ -337,242 +339,75 @@ export default function Home() {
             </h2>
           </div>
 
-          {/* Project 1 - Ophir Estate */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-32">
-            {/* Left - Text (Sticky) */}
-            <div className="lg:sticky lg:top-32 lg:self-start">
-              {/* Tags */}
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">Real Estate</span>
-                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">Web Design</span>
-                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">🇫🇷</span>
-              </div>
-
-              {/* Title */}
-              <h3 className="text-3xl md:text-4xl font-medium text-white mb-8 leading-tight">
-                Ophir Estate achieved a 40% increase in qualified leads with our premium web design
-              </h3>
-
-              {/* Divider */}
-              <div className="w-full h-px bg-white/10 mb-8"></div>
-
-              {/* Testimonial */}
-              <div className="mb-8">
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-white font-medium">Client Review</span>
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
+          {projects.map((project, index) => (
+            <Link key={project.id} href={`/works/${project.id}`} className="block group">
+              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 ${index < projects.length - 1 ? "mb-32" : ""}`}>
+                {/* Left - Text (Sticky) */}
+                <div className="lg:sticky lg:top-32 lg:self-start">
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-3 mb-8">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">{tag}</span>
                     ))}
+                    <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">{project.flag}</span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-3xl md:text-4xl font-medium text-white mb-8 leading-tight group-hover:text-purple-300 transition-colors">
+                    {project.headline}
+                  </h3>
+
+                  {/* Divider */}
+                  <div className="w-full h-px bg-white/10 mb-8"></div>
+
+                  {/* Testimonial */}
+                  <div className="mb-8">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-white font-medium">Client Review</span>
+                      <div className="flex gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-gray-400 text-lg leading-relaxed italic">
+                      {project.testimonial}
+                    </p>
+                  </div>
+
+                  {/* Author */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${project.avatarGradient} flex items-center justify-center text-white font-semibold`}>
+                        {project.avatarLetter}
+                      </div>
+                      <div>
+                        <p className="text-white font-medium italic">{project.author}</p>
+                        <p className="text-gray-500 text-sm">{project.role}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <p className="text-gray-400 text-lg leading-relaxed italic">
-                  &ldquo;Yathra transformed our digital presence with exceptional attention to detail. Their creative approach perfectly captured our luxury brand identity.&rdquo;
-                </p>
-              </div>
 
-              {/* Author */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white font-semibold">
-                    O
-                  </div>
-                  <div>
-                    <p className="text-white font-medium italic">Ophir Estate</p>
-                    <p className="text-gray-500 text-sm">Luxury Real Estate, France</p>
-                  </div>
+                {/* Right - Images */}
+                <div className="space-y-6">
+                  {project.images.map((img, i) => (
+                    <div key={i} className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
+                      <Image
+                        src={img}
+                        alt={`${project.title} - ${i === 0 ? "Main" : `Detail ${i}`}`}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
-
-            {/* Right - Images */}
-            <div className="space-y-6">
-              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
-                <Image
-                  src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop"
-                  alt="Ophir Estate Project"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
-                <Image
-                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
-                  alt="Ophir Estate Project"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
-                <Image
-                  src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop"
-                  alt="Ophir Estate Project"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Project 2 - Parad'Ice */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-32">
-            {/* Left - Text (Sticky) */}
-            <div className="lg:sticky lg:top-32 lg:self-start">
-              {/* Tags */}
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">Hospitality</span>
-                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">Branding</span>
-                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">🇫🇷</span>
-              </div>
-
-              {/* Title */}
-              <h3 className="text-3xl md:text-4xl font-medium text-white mb-8 leading-tight">
-                Parad&apos;Ice Bar & Coffee tripled their online bookings with our complete brand identity
-              </h3>
-
-              {/* Divider */}
-              <div className="w-full h-px bg-white/10 mb-8"></div>
-
-              {/* Testimonial */}
-              <div className="mb-8">
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-white font-medium">Client Review</span>
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-                <p className="text-gray-400 text-lg leading-relaxed italic">
-                  &ldquo;The neon-inspired branding Yathra created for us perfectly captures our vibrant atmosphere. Our customers love the new visual identity!&rdquo;
-                </p>
-              </div>
-
-              {/* Author */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-pink-500 flex items-center justify-center text-white font-semibold">
-                    P
-                  </div>
-                  <div>
-                    <p className="text-white font-medium italic">Parad&apos;Ice Group</p>
-                    <p className="text-gray-500 text-sm">Bar & Coffee Chain, France</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right - Images */}
-            <div className="space-y-6">
-              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
-                <Image
-                  src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=2074&auto=format&fit=crop"
-                  alt="Parad'Ice Project"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
-                <Image
-                  src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=2069&auto=format&fit=crop"
-                  alt="Parad'Ice Project"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
-                <Image
-                  src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070&auto=format&fit=crop"
-                  alt="Parad'Ice Project"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Project 3 - Tech Startup */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-            {/* Left - Text (Sticky) */}
-            <div className="lg:sticky lg:top-32 lg:self-start">
-              {/* Tags */}
-              <div className="flex flex-wrap gap-3 mb-8">
-                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">SaaS</span>
-                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">Web App</span>
-                <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">🇪🇺</span>
-              </div>
-
-              {/* Title */}
-              <h3 className="text-3xl md:text-4xl font-medium text-white mb-8 leading-tight">
-                A fintech startup secured €1.2M funding after launching their MVP built by Yathra
-              </h3>
-
-              {/* Divider */}
-              <div className="w-full h-px bg-white/10 mb-8"></div>
-
-              {/* Testimonial */}
-              <div className="mb-8">
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="text-white font-medium">Client Review</span>
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-                <p className="text-gray-400 text-lg leading-relaxed italic">
-                  &ldquo;Yathra delivered our MVP in record time without compromising on quality. The product impressed our investors and helped us close our seed round.&rdquo;
-                </p>
-              </div>
-
-              {/* Author */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-semibold">
-                    F
-                  </div>
-                  <div>
-                    <p className="text-white font-medium italic">Fintech Startup</p>
-                    <p className="text-gray-500 text-sm">Financial Technology, Europe</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right - Images */}
-            <div className="space-y-6">
-              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
-                <Image
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
-                  alt="Fintech Project"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
-                <Image
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
-                  alt="Fintech Project"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative rounded-2xl overflow-hidden bg-gray-900 aspect-[4/3]">
-                <Image
-                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop"
-                  alt="Fintech Project"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
+            </Link>
+          ))}
         </div>
       </section>
 

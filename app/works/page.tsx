@@ -8,68 +8,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import BackgroundBlobs from "@/components/BackgroundBlobs";
-
-const projects = [
-  {
-    id: "ophir-estate",
-    title: "Ophir Estate",
-    headline: "Ophir Estate achieved a 40% increase in qualified leads with our premium web design",
-    tags: ["Real Estate", "Web Design", "UI/UX"],
-    flag: "\u{1F1EB}\u{1F1F7}",
-    testimonial:
-      "\u201CYathra transformed our digital presence with exceptional attention to detail. Their creative approach perfectly captured our luxury brand identity.\u201D",
-    author: "Ophir Estate",
-    role: "Luxury Real Estate, France",
-    avatarGradient: "from-amber-500 to-orange-600",
-    avatarLetter: "O",
-    images: [
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop",
-    ],
-  },
-  {
-    id: "paradice",
-    title: "Parad\u2019Ice Group",
-    headline:
-      "Parad\u2019Ice Bar & Coffee tripled their online bookings with our complete brand identity",
-    tags: ["Hospitality", "Branding", "Identity"],
-    flag: "\u{1F1EB}\u{1F1F7}",
-    testimonial:
-      "\u201CThe neon-inspired branding Yathra created for us perfectly captures our vibrant atmosphere. Our customers love the new visual identity!\u201D",
-    author: "Parad\u2019Ice Group",
-    role: "Bar & Coffee Chain, France",
-    avatarGradient: "from-cyan-400 to-pink-500",
-    avatarLetter: "P",
-    images: [
-      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=2074&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=2069&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070&auto=format&fit=crop",
-    ],
-  },
-  {
-    id: "fintech",
-    title: "Fintech Startup",
-    headline:
-      "A fintech startup secured \u20AC1.2M funding after launching their MVP built by Yathra",
-    tags: ["SaaS", "Web App", "MVP"],
-    flag: "\u{1F1EA}\u{1F1FA}",
-    testimonial:
-      "\u201CYathra delivered our MVP in record time without compromising on quality. The product impressed our investors and helped us close our seed round.\u201D",
-    author: "Fintech Startup",
-    role: "Financial Technology, Europe",
-    avatarGradient: "from-indigo-500 to-purple-600",
-    avatarLetter: "F",
-    images: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop",
-    ],
-  },
-];
+import { projects } from "@/data/projects";
 
 export default function WorksPage() {
-  useLenis();
+  const lenisRef = useLenis();
 
   return (
     <div className="relative overflow-hidden">
@@ -127,15 +69,15 @@ export default function WorksPage() {
 
               {/* CTA + Clutch */}
               <div className="flex items-center gap-6">
-                <a
-                  href="#projects"
+                <button
+                  onClick={() => lenisRef.current?.scrollTo("#projects", { duration: 1.5 })}
                   className="group inline-flex items-center gap-3 bg-white text-black pl-6 pr-2 py-2 rounded-full font-medium text-sm hover:bg-gray-100 transition-all"
                 >
                   All Cases
                   <span className="w-8 h-8 rounded-full bg-black/10 grid place-items-center">
                     <Icon icon="solar:arrow-down-linear" width={16} className="text-black" />
                   </span>
-                </a>
+                </button>
                 <div className="flex items-center gap-2">
                   <div className="flex -space-x-1">
                     {[...Array(5)].map((_, i) => (
@@ -162,6 +104,7 @@ export default function WorksPage() {
                   src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop"
                   alt="Featured Project - Ophir Estate"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -210,9 +153,10 @@ export default function WorksPage() {
           {/* Project Cards */}
           <div className="space-y-24 md:space-y-32">
             {projects.map((project, index) => (
-              <div
+              <Link
                 key={project.id}
-                className={`glass-card rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 lg:p-14 relative overflow-hidden group hover:border-white/15 transition-all duration-500`}
+                href={`/works/${project.id}`}
+                className={`glass-card rounded-[2rem] md:rounded-[3rem] p-6 md:p-10 lg:p-14 relative overflow-hidden group hover:border-white/15 transition-all duration-500 block cursor-pointer`}
               >
                 {/* Glow effect */}
                 <div
@@ -305,6 +249,7 @@ export default function WorksPage() {
                         src={project.images[0]}
                         alt={`${project.title} - Main`}
                         fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                     </div>
@@ -314,6 +259,7 @@ export default function WorksPage() {
                           src={project.images[1]}
                           alt={`${project.title} - Detail 1`}
                           fill
+                          sizes="(max-width: 1024px) 50vw, 25vw"
                           className="object-cover group-hover:scale-105 transition-transform duration-700 delay-100"
                         />
                       </div>
@@ -328,7 +274,7 @@ export default function WorksPage() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

@@ -1,8 +1,24 @@
 interface BackgroundBlobsProps {
-  variant?: "home" | "works" | "contact";
+  variant?: "home" | "works" | "contact" | "about";
 }
 
 export default function BackgroundBlobs({ variant = "home" }: BackgroundBlobsProps) {
+  if (variant === "about") {
+    return (
+      <div className="absolute top-0 left-0 right-0 h-full z-0 pointer-events-none">
+        <div className="absolute top-[0px] left-[20%] w-[600px] h-[600px] bg-indigo-600/40 rounded-full mix-blend-screen filter blur-[120px] animate-blob"></div>
+        <div className="absolute top-[100px] right-[10%] w-[500px] h-[500px] bg-purple-500/35 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000"></div>
+        <div className="absolute top-[500px] left-[5%] w-[450px] h-[450px] bg-blue-500/25 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-4000"></div>
+        <div className="absolute top-[900px] right-[15%] w-[550px] h-[550px] bg-cyan-500/30 rounded-full mix-blend-screen filter blur-[110px] animate-blob"></div>
+        <div className="absolute top-[1400px] left-[10%] w-[500px] h-[500px] bg-pink-500/30 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000"></div>
+        <div className="absolute top-[1800px] right-[20%] w-[600px] h-[600px] bg-indigo-500/30 rounded-full mix-blend-screen filter blur-[120px] animate-blob animation-delay-4000"></div>
+        <div className="absolute top-[2200px] left-[15%] w-[500px] h-[500px] bg-purple-500/35 rounded-full mix-blend-screen filter blur-[100px] animate-blob"></div>
+        <div className="absolute top-[2600px] right-[5%] w-[550px] h-[550px] bg-blue-500/30 rounded-full mix-blend-screen filter blur-[110px] animate-blob animation-delay-2000"></div>
+        <div className="absolute top-[3000px] left-[10%] w-[600px] h-[600px] bg-pink-500/25 rounded-full mix-blend-screen filter blur-[120px] animate-blob animation-delay-4000"></div>
+      </div>
+    );
+  }
+
   if (variant === "contact") {
     return (
       <div className="absolute top-0 left-0 right-0 h-full z-0 pointer-events-none">

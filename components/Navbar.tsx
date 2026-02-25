@@ -63,12 +63,12 @@ export default function Navbar() {
           >
             Pricing
           </a>
-          <a
-            href="/#about"
+          <Link
+            href="/about"
             className="text-base text-gray-300 hover:text-white transition-all"
           >
             About
-          </a>
+          </Link>
           <a
             href="/#blog"
             className="text-base text-gray-300 hover:text-white transition-all"

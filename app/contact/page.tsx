@@ -117,7 +117,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 mb-0.5">Based in</p>
-                    <p className="text-white font-medium">France &mdash; Working worldwide</p>
+                    <p className="text-white font-medium">France, working worldwide</p>
                   </div>
                 </div>
               </div>
@@ -366,8 +366,10 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         className="w-full flex items-center justify-between p-6 text-left group"
       >
         <span className="text-white font-medium text-lg pr-4">{question}</span>
-        <div className={`w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center flex-shrink-0 transition-all duration-300 ${open ? "rotate-45 bg-white/10" : "group-hover:bg-white/10"}`}>
-          <Icon icon="solar:add-circle-linear" width={20} className="text-white" />
+        <div className={`w-10 h-10 rounded-full border border-white/10 bg-white/5 grid place-items-center flex-shrink-0 transition-all duration-300 ${open ? "rotate-45 bg-white/10" : "group-hover:bg-white/10"}`}>
+          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v14M5 12h14" />
+          </svg>
         </div>
       </button>
       <div

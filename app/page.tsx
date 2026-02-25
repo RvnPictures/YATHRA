@@ -313,8 +313,8 @@ export default function Home() {
               <p className="text-white font-light text-sm md:text-base">
                 Ready to turn your vision into reality?<br className="hidden md:block" /> Let&apos;s create something extraordinary together.
               </p>
-              <a href="#contact" className="flex items-center gap-2 bg-white text-black font-medium pl-5 pr-2 py-2 rounded-full hover:bg-gray-100 transition-all text-sm group">
-                Book a Call
+              <a href="/contact" className="flex items-center gap-2 bg-white text-black font-medium pl-5 pr-2 py-2 rounded-full hover:bg-gray-100 transition-all text-sm group">
+                Contact Us
                 <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center group-hover:bg-black/20 transition-all">
                   <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />

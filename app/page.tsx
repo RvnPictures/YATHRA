@@ -304,9 +304,9 @@ export default function Home() {
             </h2>
           </div>
 
-          {projects.map((project, index) => (
+          {projects.slice(0, 3).map((project, index) => (
             <Link key={project.id} href={`/works/${project.id}`} className="block group">
-              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 ${index < projects.length - 1 ? "mb-32" : ""}`}>
+              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 ${index < 2 ? "mb-32" : ""}`}>
                 {/* Left - Text (Sticky) */}
                 <div className="lg:sticky lg:top-32 lg:self-start">
                   {/* Tags */}

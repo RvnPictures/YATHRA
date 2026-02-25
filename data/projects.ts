@@ -138,8 +138,8 @@ export const projects: Project[] = [
     avatarLetter: "P",
     images: [
       "/projects/paradice-hero.png",
-      "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=2069&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070&auto=format&fit=crop",
+      "/projects/paradice-detail-1.png",
+      "/projects/paradice-detail-2.png",
     ],
     stack: ["Figma", "Adobe Illustrator", "Brand Strategy", "Print Design"],
     liveUrl: "https://paradice-group.fr",
@@ -171,8 +171,8 @@ export const projects: Project[] = [
     avatarLetter: "P",
     images: [
       "/projects/pixevent-hero.png",
-      "https://images.unsplash.com/photo-1505236858219-8359eb29e329?q=80&w=2062&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070&auto=format&fit=crop",
+      "/projects/pixevent-detail-1.png",
+      "/projects/pixevent-detail-2.png",
     ],
     stack: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "AWS", "QR Code API"],
     liveUrl: "https://pixevent.com",

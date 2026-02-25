@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Yathra-WebSite - Digital Product Agency",
@@ -20,7 +21,10 @@ export default function RootLayout({
           async
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <ScrollToTop />
+        {children}
+      </body>
     </html>
   );
 }

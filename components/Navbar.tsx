@@ -158,12 +158,12 @@ export default function Navbar() {
           >
             About
           </Link>
-          <a
-            href="/#blog"
+          <Link
+            href="/blog"
             className="text-base text-gray-300 hover:text-white transition-all"
           >
             Blog
-          </a>
+          </Link>
         </div>
 
         {/* CTA */}

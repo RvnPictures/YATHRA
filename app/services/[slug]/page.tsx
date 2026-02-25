@@ -21,10 +21,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return { title: "Service Not Found" };
 
   return {
-    title: `${service.title} — ${service.category} | Yathra`,
+    title: `${service.title} | ${service.category} | Yathra`,
     description: service.description,
     openGraph: {
-      title: `${service.title} — ${service.category} | Yathra`,
+      title: `${service.title} | ${service.category} | Yathra`,
       description: service.description,
     },
   };

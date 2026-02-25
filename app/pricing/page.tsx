@@ -139,7 +139,7 @@ const faqItems = [
   },
   {
     q: "Do you offer post-launch support?",
-    a: "Yes. We offer maintenance packages for continuous updates, performance monitoring, UX optimization, and feature additions. We don't just build and leave — we stay involved to help your product grow.",
+    a: "Yes. We offer maintenance packages for continuous updates, performance monitoring, UX optimization, and feature additions. We don't just build and leave, we stay involved to help your product grow.",
   },
 ];
 
@@ -171,7 +171,7 @@ const trustPoints = [
   {
     icon: "solar:code-circle-linear",
     title: "Modern Tech Stack",
-    desc: "Next.js, React, TypeScript, Tailwind CSS — we build with the latest tools for maximum performance and scalability.",
+    desc: "Next.js, React, TypeScript, Tailwind CSS. We build with the latest tools for maximum performance and scalability.",
     gradient: "from-indigo-500/20 to-blue-500/20",
   },
   {
@@ -210,7 +210,7 @@ export default function PricingPage() {
             </h1>
 
             <p className="text-lg text-gray-400 font-light leading-relaxed max-w-xl mb-10">
-              Every project is unique. We provide custom proposals with clear scope, timeline, and pricing — no templates, no surprises.
+              Every project is unique. We provide custom proposals with clear scope, timeline, and pricing. No templates, no surprises.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -225,7 +225,7 @@ export default function PricingPage() {
               </Link>
               <div className="flex items-center gap-2 text-sm text-gray-500">
                 <Icon icon="solar:clock-circle-linear" width={16} className="text-gray-500" />
-                Free consultation — response within 24h
+                Free consultation, response within 24h
               </div>
             </div>
           </div>

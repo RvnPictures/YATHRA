@@ -31,7 +31,7 @@ export const services: Service[] = [
     category: "Design",
     icon: "solar:monitor-linear",
     description:
-      "We create stunning, responsive websites that reflect your brand identity and captivate your audience. Our designs are built for performance, accessibility, and conversion — turning visitors into customers.",
+      "We create stunning, responsive websites that reflect your brand identity and captivate your audience. Our designs are built for performance, accessibility, and conversion, turning visitors into customers.",
     features: [
       "Custom website design",
       "Responsive & mobile-first layouts",
@@ -113,7 +113,7 @@ export const services: Service[] = [
     category: "Development",
     icon: "solar:rocket-linear",
     description:
-      "Launch your product idea fast with a focused, functional MVP. We help startups and founders go from concept to a live product in weeks — validating your idea with real users before scaling.",
+      "Launch your product idea fast with a focused, functional MVP. We help startups and founders go from concept to a live product in weeks, validating your idea with real users before scaling.",
     features: [
       "Rapid prototyping & validation",
       "Lean feature prioritization",
@@ -129,7 +129,7 @@ export const services: Service[] = [
     category: "Development",
     icon: "solar:widget-linear",
     description:
-      "We build pixel-perfect, CMS-powered websites on Webflow that your team can easily manage. Ideal for marketing sites, portfolios, and content-driven platforms — no code maintenance required.",
+      "We build pixel-perfect, CMS-powered websites on Webflow that your team can easily manage. Ideal for marketing sites, portfolios, and content-driven platforms. No code maintenance required.",
     features: [
       "Custom Webflow development",
       "CMS & dynamic content setup",
@@ -145,7 +145,7 @@ export const services: Service[] = [
     category: "Development",
     icon: "solar:document-linear",
     description:
-      "We design and develop high-converting landing pages that turn traffic into leads. Every element — from headline to CTA — is optimized for clarity, trust, and action.",
+      "We design and develop high-converting landing pages that turn traffic into leads. Every element, from headline to CTA, is optimized for clarity, trust, and action.",
     features: [
       "Conversion-focused design",
       "A/B testing ready",

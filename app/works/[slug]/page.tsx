@@ -22,10 +22,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return { title: "Project Not Found" };
 
   return {
-    title: `${project.title} — Case Study | Yathra`,
+    title: `${project.title} | Case Study | Yathra`,
     description: project.description,
     openGraph: {
-      title: `${project.title} — Case Study | Yathra`,
+      title: `${project.title} | Case Study | Yathra`,
       description: project.description,
       images: [project.images[0]],
     },

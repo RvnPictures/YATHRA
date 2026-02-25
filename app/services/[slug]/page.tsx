@@ -60,7 +60,7 @@ export default async function ServicePage({ params }: Props) {
           <div className="max-w-7xl mx-auto">
             {/* Breadcrumb */}
             <Link
-              href="/#services"
+              href="/"
               className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-10 group"
             >
               <Icon

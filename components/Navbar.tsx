@@ -146,12 +146,12 @@ export default function Navbar() {
             Industries
             <Icon icon="solar:alt-arrow-down-linear" width={16} />
           </a>
-          <a
-            href="/#pricing"
+          <Link
+            href="/pricing"
             className="text-base text-gray-300 hover:text-white transition-all"
           >
             Pricing
-          </a>
+          </Link>
           <Link
             href="/about"
             className="text-base text-gray-300 hover:text-white transition-all"

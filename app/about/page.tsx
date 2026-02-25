@@ -9,8 +9,8 @@ import CTASection from "@/components/CTASection";
 import { useLenis } from "@/hooks/useLenis";
 
 const stats = [
-  { value: "50+", label: "Projects delivered" },
-  { value: "98%", label: "Client satisfaction" },
+  { value: "15+", label: "Projects delivered" },
+  { value: "100%", label: "Client satisfaction" },
   { value: "12+", label: "Industries served" },
   { value: "2h", label: "Average response time" },
 ];

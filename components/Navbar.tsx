@@ -79,15 +79,15 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="flex items-center gap-4">
-          <a
-            href="/#contact"
+          <Link
+            href="/contact"
             className="group inline-flex items-center gap-3 bg-white text-black pl-5 pr-1.5 py-1.5 rounded-full text-sm font-medium hover:bg-gray-100 transition-all"
           >
             Contact Us
             <span className="w-7 h-7 rounded-full bg-black/10 backdrop-blur-sm grid place-items-center">
               <Icon icon="solar:arrow-right-linear" width={14} className="text-black translate-y-px" />
             </span>
-          </a>
+          </Link>
           <button className="md:hidden text-white pt-1">
             <Icon icon="solar:hamburger-menu-linear" width={28} />
           </button>

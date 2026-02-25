@@ -25,6 +25,39 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "wimassur",
+    title: "WimAssur",
+    headline:
+      "WimAssur established a strong online presence with a professional insurance showcase website",
+    tags: ["Insurance", "Web Design", "SEO"],
+    flag: "\u{1F1EB}\u{1F1F7}",
+    testimonial:
+      "\u201CYathra delivered a clean, professional website that perfectly represents our brand. Our clients find it easy to navigate and request quotes online.\u201D",
+    author: "WimAssur",
+    role: "Insurance Brokerage, France",
+    avatarGradient: "from-emerald-500 to-teal-600",
+    avatarLetter: "W",
+    images: [
+      "/projects/wimassur-hero.png",
+      "/projects/wimassur-detail-1.png",
+      "/projects/wimassur-detail-2.png",
+    ],
+    stack: ["Next.js", "Tailwind CSS", "Figma", "SEO", "Blog Integration"],
+    liveUrl: "https://wimassur.fr",
+    description:
+      "WimAssur is an independent insurance brokerage based in France, offering tailored insurance solutions for individuals and professionals. Yathra designed and developed a modern showcase website with an integrated blog, contact forms, and SEO optimization to help them attract and convert clients online.",
+    challenge:
+      "WimAssur needed a professional digital presence to build trust with potential clients in a competitive insurance market. They had no website and relied entirely on word-of-mouth. They needed a site that would convey credibility, clearly present their services, and generate quote requests through an easy-to-use online form.",
+    solution:
+      "We designed a clean, trust-inspiring website with a warm green color palette that reflects security and reliability. The site features a streamlined quote request flow, a contact page with rapid response guarantees, and an SEO-optimized blog with articles on insurance topics to drive organic traffic. The entire site is built for performance and mobile-first usability.",
+    results: [
+      { label: "Clients Satisfied", value: "100+" },
+      { label: "Response Time", value: "<24h" },
+      { label: "Blog Articles", value: "10+" },
+      { label: "ORIAS Certified", value: "Yes" },
+    ],
+  },
+  {
     id: "prepcivique",
     title: "PrepCivique",
     headline:

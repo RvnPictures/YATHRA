@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import BackgroundBlobs from "@/components/BackgroundBlobs";
 import { projects } from "@/data/projects";
+import { designServices, devServices } from "@/data/services";
 
 const words = ["websites", "mobile apps", "SaaS"];
 const wordWidths = ["4.8em", "6.2em", "3.2em"]; // Largeurs approximatives pour chaque mot
@@ -234,36 +235,18 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/10 rounded-full blur-[60px] group-hover:bg-purple-500/20 transition-all"></div>
               <h3 className="text-2xl font-semibold text-white mb-8 relative z-10">Design</h3>
               <div className="space-y-0 relative z-10">
-                <div className="service-row flex items-center justify-between py-5 border-b border-white/10 cursor-pointer">
-                  <span className="text-gray-300 transition-colors">UI/UX Design</span>
-                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
-                  </svg>
-                </div>
-                <div className="service-row flex items-center justify-between py-5 border-b border-white/10 cursor-pointer">
-                  <span className="text-gray-300 transition-colors">Web Design</span>
-                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
-                  </svg>
-                </div>
-                <div className="service-row flex items-center justify-between py-5 border-b border-white/10 cursor-pointer">
-                  <span className="text-gray-300 transition-colors">Mobile App Design</span>
-                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
-                  </svg>
-                </div>
-                <div className="service-row flex items-center justify-between py-5 border-b border-white/10 cursor-pointer">
-                  <span className="text-gray-300 transition-colors">Website Redesign</span>
-                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
-                  </svg>
-                </div>
-                <div className="service-row flex items-center justify-between py-5 cursor-pointer">
-                  <span className="text-gray-300 transition-colors">UX/UI Audit</span>
-                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
-                  </svg>
-                </div>
+                {designServices.map((service, i) => (
+                  <Link
+                    key={service.id}
+                    href={`/services/${service.id}`}
+                    className={`service-row flex items-center justify-between py-5 cursor-pointer ${i < designServices.length - 1 ? "border-b border-white/10" : ""}`}
+                  >
+                    <span className="text-gray-300 transition-colors">{service.title}</span>
+                    <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                  </Link>
+                ))}
               </div>
             </div>
 
@@ -272,36 +255,18 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-48 h-48 bg-blue-500/10 rounded-full blur-[60px] group-hover:bg-blue-500/20 transition-all"></div>
               <h3 className="text-2xl font-semibold text-white mb-8 relative z-10">Development</h3>
               <div className="space-y-0 relative z-10">
-                <div className="service-row flex items-center justify-between py-5 border-b border-white/10 cursor-pointer">
-                  <span className="text-gray-300 transition-colors">Web Development</span>
-                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
-                  </svg>
-                </div>
-                <div className="service-row flex items-center justify-between py-5 border-b border-white/10 cursor-pointer">
-                  <span className="text-gray-300 transition-colors">MVP Development</span>
-                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
-                  </svg>
-                </div>
-                <div className="service-row flex items-center justify-between py-5 border-b border-white/10 cursor-pointer">
-                  <span className="text-gray-300 transition-colors">WebFlow Development</span>
-                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
-                  </svg>
-                </div>
-                <div className="service-row flex items-center justify-between py-5 border-b border-white/10 cursor-pointer">
-                  <span className="text-gray-300 transition-colors">Landing Page</span>
-                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
-                  </svg>
-                </div>
-                <div className="service-row flex items-center justify-between py-5 cursor-pointer">
-                  <span className="text-gray-300 transition-colors">Mobile Development</span>
-                  <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
-                  </svg>
-                </div>
+                {devServices.map((service, i) => (
+                  <Link
+                    key={service.id}
+                    href={`/services/${service.id}`}
+                    className={`service-row flex items-center justify-between py-5 cursor-pointer ${i < devServices.length - 1 ? "border-b border-white/10" : ""}`}
+                  >
+                    <span className="text-gray-300 transition-colors">{service.title}</span>
+                    <svg className="w-5 h-5 text-gray-500 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>

@@ -139,13 +139,6 @@ export default function Navbar() {
             </div>
           </div>
 
-          <a
-            href="/#industries"
-            className="text-base text-gray-300 hover:text-white transition-all flex items-center gap-1"
-          >
-            Industries
-            <Icon icon="solar:alt-arrow-down-linear" width={16} />
-          </a>
           <Link
             href="/pricing"
             className="text-base text-gray-300 hover:text-white transition-all"
@@ -153,16 +146,16 @@ export default function Navbar() {
             Pricing
           </Link>
           <Link
-            href="/about"
-            className="text-base text-gray-300 hover:text-white transition-all"
-          >
-            About
-          </Link>
-          <Link
             href="/blog"
             className="text-base text-gray-300 hover:text-white transition-all"
           >
             Blog
+          </Link>
+          <Link
+            href="/about"
+            className="text-base text-gray-300 hover:text-white transition-all"
+          >
+            About
           </Link>
         </div>
 

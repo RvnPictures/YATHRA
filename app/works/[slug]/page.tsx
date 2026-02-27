@@ -9,6 +9,7 @@ import CTASection from "@/components/CTASection";
 import BackgroundBlobs from "@/components/BackgroundBlobs";
 import Icon from "@/components/Icon";
 import LenisWrapper from "./LenisWrapper";
+import ImageLightbox from "./ImageLightbox";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -216,24 +217,7 @@ export default async function ProjectPage({ params }: Props) {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {project.images.map((img, i) => (
-              <div
-                key={i}
-                className="glass-card rounded-2xl p-2 overflow-hidden"
-              >
-                <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
-                  <Image
-                    src={img}
-                    alt={`${project.title} — Screenshot ${i + 1}`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
+          <ImageLightbox images={project.images} title={project.title} />
         </div>
       </section>
 

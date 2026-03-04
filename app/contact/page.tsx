@@ -64,7 +64,7 @@ export default function ContactPage() {
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight leading-[1.1] text-white mb-6">
                 Let&apos;s build
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 italic">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 italic pr-1">
                   something great
                 </span>
               </h1>
@@ -125,7 +125,7 @@ export default function ContactPage() {
               {/* Response time */}
               <div className="mt-8 flex items-center gap-3 text-sm text-gray-500">
                 <Icon icon="solar:clock-circle-linear" width={18} className="text-gray-500" />
-                Average response time: <span className="text-white font-medium">under 2 hours</span>
+                Average response time: <span className="text-white font-medium">under 24 hours</span>
               </div>
             </div>
 
@@ -314,9 +314,9 @@ export default function ContactPage() {
       <section className="py-24 md:py-32 px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-sm text-gray-400 font-medium tracking-widest uppercase mb-6">FAQ</p>
+            <p className="text-sm text-gray-400 font-medium tracking-widest uppercase mb-6">Q&A</p>
             <h2 className="text-4xl md:text-5xl font-light text-white leading-tight">
-              Questions? <span className="italic">Answers.</span>
+              Q&A
             </h2>
           </div>
 

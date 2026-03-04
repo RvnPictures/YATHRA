@@ -150,7 +150,7 @@ export default async function ProjectPage({ params }: Props) {
               </p>
               <h2 className="text-3xl md:text-4xl font-medium text-white mb-6 leading-tight">
                 Understanding the{" "}
-                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 pr-1">
                   problem
                 </span>
               </h2>
@@ -166,7 +166,7 @@ export default async function ProjectPage({ params }: Props) {
               </p>
               <h2 className="text-3xl md:text-4xl font-medium text-white mb-6 leading-tight">
                 Crafting the{" "}
-                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
+                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400 pr-1">
                   solution
                 </span>
               </h2>
@@ -293,7 +293,11 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </section>
 
-      <CTASection />
+      <CTASection
+        headline={<>Inspired by<br />what you see?</>}
+        description="We'd love to craft something just as impactful for your business. Let's make it happen."
+        buttonText="Start Your Project"
+      />
       <Footer />
     </div>
     </LenisWrapper>

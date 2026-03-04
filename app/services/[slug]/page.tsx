@@ -117,7 +117,7 @@ export default async function ServicePage({ params }: Props) {
                 </p>
                 <h2 className="text-3xl md:text-4xl font-medium text-white leading-tight">
                   Everything you need for{" "}
-                  <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                  <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 pr-1">
                     exceptional results
                   </span>
                 </h2>
@@ -249,7 +249,11 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </section>
 
-        <CTASection />
+        <CTASection
+          headline={<>Ready to get<br />started?</>}
+          description="Now that you know what we offer, let's see how this service can transform your business."
+          buttonText="Request a Quote"
+        />
         <Footer />
       </div>
     </LenisWrapper>

@@ -10,9 +10,9 @@ import { useLenis } from "@/hooks/useLenis";
 
 const stats = [
   { value: "15+", label: "Projects delivered" },
-  { value: "100%", label: "Client satisfaction" },
+  { value: "10+", label: "Languages & frameworks" },
   { value: "12+", label: "Industries served" },
-  { value: "2h", label: "Average response time" },
+  { value: "24h", label: "Average response time" },
 ];
 
 const values = [
@@ -76,7 +76,7 @@ export default function AboutPage() {
             <p className="text-sm text-gray-400 font-medium tracking-widest uppercase mb-6">About Yathra</p>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight leading-[1.1] text-white mb-8">
               A digital agency built on{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 italic">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 italic pr-1">
                 craft & conviction
               </span>
             </h1>

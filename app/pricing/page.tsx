@@ -203,7 +203,7 @@ export default function PricingPage() {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight leading-[1.1] text-white mb-6">
               Start{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 italic">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 italic pr-1">
                 2x faster
               </span>{" "}
               with a transparent estimate
@@ -510,9 +510,9 @@ export default function PricingPage() {
       <section className="relative z-10 px-6 pb-24 md:pb-32">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-sm text-gray-400 font-medium tracking-widest uppercase mb-6">FAQ</p>
+            <p className="text-sm text-gray-400 font-medium tracking-widest uppercase mb-6">Q&A</p>
             <h2 className="text-4xl md:text-5xl font-light text-white leading-tight">
-              Questions? <span className="italic">Answers.</span>
+              Q&A
             </h2>
           </div>
 
@@ -524,7 +524,11 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <CTASection />
+      <CTASection
+        headline={<>Found the right<br />plan for you?</>}
+        description="Pick the plan that fits your needs and let's get your project moving. No commitment required."
+        buttonText="Get Your Free Consultation"
+      />
       <Footer />
     </div>
   );

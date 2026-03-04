@@ -35,11 +35,11 @@ export default function WorksPage() {
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight leading-[1.1] text-white mb-8">
                 We transform{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 italic">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 italic pr-1">
                   Ideas
                 </span>{" "}
                 into design{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 italic">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 italic pr-1">
                   Success Stories
                 </span>
               </h1>
@@ -280,7 +280,11 @@ export default function WorksPage() {
         </div>
       </section>
 
-      <CTASection />
+      <CTASection
+        headline={<>Want results<br />like these?</>}
+        description="Every project you just saw started with a simple conversation. Yours could be next."
+        buttonText="Let's Talk"
+      />
       <Footer />
     </div>
   );

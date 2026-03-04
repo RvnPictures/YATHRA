@@ -233,7 +233,11 @@ export default async function BlogArticlePage({ params }: Props) {
           </section>
         )}
 
-        <CTASection />
+        <CTASection
+          headline={<>Want us to build<br />something like this?</>}
+          description="This case study is just one example of what we deliver. Let's discuss your vision."
+          buttonText="Contact Us"
+        />
         <Footer />
       </div>
     </LenisWrapper>

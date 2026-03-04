@@ -74,7 +74,7 @@ export default function BlogPage() {
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight leading-[1.1] text-white mb-6">
             Insights &{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 italic">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 italic pr-1">
               Ideas
             </span>
           </h1>
@@ -255,7 +255,11 @@ export default function BlogPage() {
         </section>
       )}
 
-      <CTASection />
+      <CTASection
+        headline={<>From insights<br />to action</>}
+        description="Liked what you read? Let's turn these ideas into your next digital product."
+        buttonText="Get Started"
+      />
       <Footer />
     </div>
   );

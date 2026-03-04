@@ -155,7 +155,7 @@ export default function Navbar() {
             href="/about"
             className="text-base text-gray-300 hover:text-white transition-all"
           >
-            About
+            About Us
           </Link>
         </div>
 

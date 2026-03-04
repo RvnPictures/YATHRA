@@ -304,9 +304,9 @@ export default function Home() {
             </h2>
           </div>
 
-          {projects.slice(0, 3).map((project, index) => (
+          {projects.slice(0, 1).map((project) => (
             <Link key={project.id} href={`/works/${project.id}`} className="block group">
-              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 ${index < 2 ? "mb-32" : ""}`}>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
                 {/* Left - Text (Sticky) */}
                 <div className="lg:sticky lg:top-32 lg:self-start">
                   {/* Tags */}
@@ -373,6 +373,21 @@ export default function Home() {
               </div>
             </Link>
           ))}
+
+          {/* View all projects button */}
+          <div className="mt-20 flex justify-center">
+            <Link
+              href="/works"
+              className="group inline-flex items-center gap-3 bg-white text-black pl-8 pr-2 py-2 rounded-full font-semibold text-base md:text-lg hover:bg-gray-100 transition-all"
+            >
+              View all projects
+              <span className="w-10 h-10 rounded-full bg-black/10 grid place-items-center group-hover:bg-black/20 transition-all">
+                <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+              </span>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -499,7 +514,11 @@ export default function Home() {
         </div>
       </section>
 
-      <CTASection />
+      <CTASection
+        headline={<>Your next project<br />starts here</>}
+        description="You've seen what we do. Let's talk about what we can build together."
+        buttonText="Start a Project"
+      />
       <Footer />
     </div>
   );
